@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">観光案内TOP</string>
+    <string name="text_select_label">表示するエリアの選択</string>
+    <string name="chooseButtun">選択した県で表示</string>
+    <string name="allButtun">一覧表示</string>
+</resources>
