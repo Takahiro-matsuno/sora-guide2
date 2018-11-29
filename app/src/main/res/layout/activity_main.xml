@@ -6,7 +6,7 @@
               android:background="#cfd"
               android:orientation="vertical"
               android:gravity="center_horizontal"
-              tools:context=".MainActivity">
+              tools:context=".KankoMainActivity1">
 
     <TextView
             android:id="@+id/textView"

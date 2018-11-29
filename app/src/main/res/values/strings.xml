@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">観光案内TOP</string>
+    <string name="app_name">Soragouide</string>
     <string name="text_select_label">表示するエリアの選択</string>
     <string name="chooseButtun">選択した県で表示</string>
     <string name="allButtun">一覧表示</string>
+    <string name="airportButton">空港案内</string>
+    <string name="sightseeingButton">観光案内</string>
+    <string name="flightButton">フライト情報</string>
+    <string name="taxiButton">タクシー予約</string>
 </resources>

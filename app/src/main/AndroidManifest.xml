@@ -9,15 +9,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".KankoMainActivity1">
+        </activity>
+        <activity android:name=".KankoMainActivity2">
+
+            <!-- intetfilterが動かす画面の対象になる -->
+
+        </activity>
+        <activity android:name=".TopMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".Main2Activity">
-  <!--intetfilterが動かす画面の対象になる -->
-
         </activity>
     </application>
 

@@ -11,7 +11,7 @@ import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
 
-class MainActivity : AppCompatActivity() {
+class KankoMainActivity1 : AppCompatActivity() {
     //プルダウンの選択肢
     private val spinnerItems = arrayOf(
         "高知県",
