@@ -17,7 +17,7 @@ class TopMenuActivity : AppCompatActivity() {
         val toAirportButton = findViewById<Button>(R.id.airport)
         toAirportButton.setOnClickListener{
 
-            startActivity<KankoMainActivity1>()
+            startActivity<AirportGuideActivity>()
         }
 
         //フライト情報画面へ遷移
