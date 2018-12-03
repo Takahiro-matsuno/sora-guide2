@@ -24,14 +24,14 @@ class TopMenuActivity : AppCompatActivity() {
         val toFlightInfoButton = findViewById<Button>(R.id.flightinfo)
         toFlightInfoButton.setOnClickListener{
 
-            startActivity<KankoMainActivity1>()
+            startActivity<AirportGuideActivity>()
         }
 
         //タクシー予約画面へ遷移
         val toTaxyButton = findViewById<Button>(R.id.taxi)
         toTaxyButton.setOnClickListener{
 
-            startActivity<KankoMainActivity1>()
+            startActivity<AirportGuideActivity>()
         }
 
         //観光案内画面へ遷移
