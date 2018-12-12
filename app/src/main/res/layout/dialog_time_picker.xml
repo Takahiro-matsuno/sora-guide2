@@ -6,36 +6,34 @@
         android:layout_height="wrap_content"
 >
     <NumberPicker
+            android:id="@+id/hour_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/hour_picker"
+            android:descendantFocusability="blocksDescendants"
             app:layout_constraintTop_toTopOf="@+id/colon_text"
             app:layout_constraintBottom_toBottomOf="@+id/colon_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/colon_text"
-            android:textSize="24sp"
-            android:focusable="false"
     />
     <TextView
             android:id="@+id/colon_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/colon"
+            android:textSize="@dimen/text_size"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="："
-            android:textSize="24sp"
     />
     <NumberPicker
             android:id="@+id/minute_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
             app:layout_constraintTop_toTopOf="@+id/colon_text"
             app:layout_constraintBottom_toBottomOf="@+id/colon_text"
             app:layout_constraintStart_toEndOf="@+id/colon_text"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="24sp"
-            android:focusable="false"
     />
 </android.support.constraint.ConstraintLayout>

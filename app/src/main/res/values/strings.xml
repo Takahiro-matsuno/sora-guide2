@@ -7,4 +7,5 @@
     <string name="sightseeingButton">観光案内</string>
     <string name="flightButton">フライト情報</string>
     <string name="taxiButton">タクシー予約</string>
+    <string name="colon">:</string>
 </resources>
