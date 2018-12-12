@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".AirportGuideActivity">
         </activity>
+        <activity android:name=".TaxiReservationActivity">
+        </activity>
     </application>
 
 </manifest>

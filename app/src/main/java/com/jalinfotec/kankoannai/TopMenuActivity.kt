@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_top_menu.*
 import org.jetbrains.anko.startActivity
 
 class TopMenuActivity : AppCompatActivity() {
@@ -28,10 +29,10 @@ class TopMenuActivity : AppCompatActivity() {
         }
 
         //タクシー予約画面へ遷移
-        val toTaxyButton = findViewById<Button>(R.id.taxi)
-        toTaxyButton.setOnClickListener{
+        val toTaxiButton = findViewById<Button>(R.id.taxi)
+        toTaxiButton.setOnClickListener{
 
-            startActivity<AirportGuideActivity>()
+            startActivity<TaxiReservationActivity>()
         }
 
         //観光案内画面へ遷移
