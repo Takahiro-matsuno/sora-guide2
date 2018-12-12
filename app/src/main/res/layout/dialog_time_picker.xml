@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+>
+    <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hour_picker"
+            app:layout_constraintTop_toTopOf="@+id/colon_text"
+            app:layout_constraintBottom_toBottomOf="@+id/colon_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colon_text"
+            android:textSize="24sp"
+            android:focusable="false"
+    />
+    <TextView
+            android:id="@+id/colon_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="："
+            android:textSize="24sp"
+    />
+    <NumberPicker
+            android:id="@+id/minute_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/colon_text"
+            app:layout_constraintBottom_toBottomOf="@+id/colon_text"
+            app:layout_constraintStart_toEndOf="@+id/colon_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="24sp"
+            android:focusable="false"
+    />
+</android.support.constraint.ConstraintLayout>
