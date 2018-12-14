@@ -9,5 +9,7 @@
     <string name="taxiButton">タクシー予約</string>
     <string name="colon">:</string>
     <string name="booking_registration">予約登録</string>
+    <string name="to_booking_registration">予約登録へ</string>
     <string name="booking_check">予約確認</string>
+    <string name="to_booking_check">予約確認へ</string>
 </resources>

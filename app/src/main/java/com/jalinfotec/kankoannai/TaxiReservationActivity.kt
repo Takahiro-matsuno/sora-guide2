@@ -2,10 +2,9 @@ package com.jalinfotec.kankoannai
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_taxi_reservation.*
 import org.jetbrains.anko.startActivity
-
-
 
 class TaxiReservationActivity :
     AppCompatActivity(),
@@ -31,6 +30,7 @@ class TaxiReservationActivity :
         }
 
         time_text.setOnClickListener {
+            // 乗車時間選択ダイアログを表示
             showTimePickerDialog(minHour, maxHour, hour, minute)
         }
     }
@@ -45,10 +45,8 @@ class TaxiReservationActivity :
     override fun setTime(hour: Int, minute: Int) {
         this.hour = hour
         this.minute = minute
-
         val hourStr = if (hour < 10) "0$hour" else "$hour"
         val minuteStr = if (minute < 10) "0$minute" else "$minute"
-
         setTimeText("$hourStr:$minuteStr")
     }
     private fun setTimeText(str: String) = time_text.setText(str)

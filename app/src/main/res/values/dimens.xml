@@ -2,4 +2,5 @@
 <!-- displaySize = normal, dpi = mdpi-->
 <resources>
     <dimen name="text_size">24sp</dimen>
+    <dimen name="margin_size">8dp</dimen>
 </resources>
