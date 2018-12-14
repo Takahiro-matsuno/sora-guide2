@@ -1,4 +1,4 @@
-package com.jalinfotec.kankoannai
+package com.jalinfotec.soraguide
 
 import org.junit.Test
 

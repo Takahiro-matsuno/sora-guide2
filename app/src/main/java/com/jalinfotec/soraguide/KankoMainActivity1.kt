@@ -1,4 +1,4 @@
-package com.jalinfotec.kankoannai
+package com.jalinfotec.soraguide
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main2.*
 
 class KankoMainActivity1 : AppCompatActivity() {
     //プルダウンの選択肢

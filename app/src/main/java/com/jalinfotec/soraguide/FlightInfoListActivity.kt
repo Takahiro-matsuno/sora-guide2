@@ -1,12 +1,12 @@
-package com.jalinfotec.kankoannai
+package com.jalinfotec.soraguide
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class AirportGuideDetailActivity : AppCompatActivity() {
+class FlightInfoListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_airport_guide_detail)
+        setContentView(R.layout.activity_flight_info_list)
     }
 }

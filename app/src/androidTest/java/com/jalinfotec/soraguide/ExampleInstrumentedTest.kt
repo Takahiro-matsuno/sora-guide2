@@ -1,4 +1,4 @@
-package com.jalinfotec.kankoannai
+package com.jalinfotec.soraguide
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.jalinfotec.kankoannai
+package com.jalinfotec.soraguide
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
