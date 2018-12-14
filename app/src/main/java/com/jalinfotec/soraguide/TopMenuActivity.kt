@@ -36,7 +36,7 @@ class TopMenuActivity : AppCompatActivity() {
         //観光案内画面へ遷移
         val toSightseeingButton = findViewById<Button>(R.id.sightseeing)
         toSightseeingButton.setOnClickListener{
-            startActivity<KankoMainActivity1>()
+            startActivity<TouristInfoSerchActivity>()
         }
 
         val affiliateButton = findViewById<Button>(R.id.affiliate)

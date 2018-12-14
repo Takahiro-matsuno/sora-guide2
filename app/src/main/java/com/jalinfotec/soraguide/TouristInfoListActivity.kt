@@ -3,10 +3,10 @@ package com.jalinfotec.soraguide
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class KankoMainActivity2 : AppCompatActivity() {
+class TouristInfoListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_tourist_info_list)
     }
 }

@@ -8,9 +8,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_tourist_info_serch.*
 
-class KankoMainActivity1 : AppCompatActivity() {
+class TouristInfoSerchActivity : AppCompatActivity() {
     //プルダウンの選択肢
     private val spinnerItems = arrayOf(
         "高知県",
@@ -20,7 +20,7 @@ class KankoMainActivity1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_tourist_info_serch)
 
         //val spinner = findViewById<Spinner>(R.id.spinner)
 

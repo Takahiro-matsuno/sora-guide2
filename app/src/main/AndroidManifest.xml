@@ -9,9 +9,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".KankoMainActivity1">
+        <activity android:name=".TouristInfoSerchActivity">
         </activity>
-        <activity android:name=".KankoMainActivity2">
+        <activity android:name=".TouristInfoListActivity">
 
             <!-- intetfilterが動かす画面の対象になる -->
 
@@ -36,6 +36,22 @@
         <activity android:name=".MyFlightRegistrationActivity">
         </activity>
         <activity android:name=".MyFlightCheckActivity">
+        </activity>
+        <activity android:name=".TaxiReservationActivity">
+        </activity>
+        <activity android:name=".TaxiReservationCheckActivity">
+        </activity>
+        <activity android:name=".TaxiReservationCompActivity">
+        </activity>
+        <activity android:name=".MyTaxiActivity">
+        </activity>
+        <activity android:name=".MyTaxiChangeActivity">
+        </activity>
+        <activity android:name=".MyTaxiCancelActivity">
+        </activity>
+        <activity android:name=".TouristInfoDetailActivity">
+        </activity>
+        <activity android:name=".TouristInfoMapActivity">
         </activity>
     </application>
 

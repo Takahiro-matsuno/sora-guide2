@@ -6,7 +6,7 @@
               android:background="#cfd"
               android:orientation="vertical"
               android:gravity="center_horizontal"
-              tools:context=".KankoMainActivity1">
+              tools:context=".TouristInfoSerchActivity">
 
     <TextView
             android:id="@+id/textView"
