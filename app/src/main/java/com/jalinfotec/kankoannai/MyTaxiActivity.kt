@@ -10,10 +10,13 @@ class MyTaxiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_taxi)
+        // アニメーションの無効化
+        overridePendingTransition(0, 0)
 
         reg_tab.setOnClickListener {
             // タクシー予約画面へ遷移
-            startActivity<TaxiReservationActivity>()
+            startActivity<TaxiReservationActivity>(
+                Pair(TaxiReservationActivity.fromTaxiKey, TaxiReservationActivity.fromTaxi))
             this.finish()
         }
     }

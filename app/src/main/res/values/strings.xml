@@ -12,4 +12,5 @@
     <string name="to_booking_registration">予約登録へ</string>
     <string name="booking_check">予約確認</string>
     <string name="to_booking_check">予約確認へ</string>
+    <string name="rideOnTime">乗車時間</string>
 </resources>
