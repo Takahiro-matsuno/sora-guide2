@@ -13,4 +13,17 @@
     <string name="booking_check">予約確認</string>
     <string name="to_booking_check">予約確認へ</string>
     <string name="rideOnTime">乗車時間</string>
+    <string name="rideOnDay">乗車日</string>
+    <string name="numberOfPeople_ADLT">人数（大人）</string>
+    <string name="numberOfPeople_CHLD">人数（子供）</string>
+    <string name="dispatchNumber">配車台数</string>
+    <string name="taxiCompany">タクシー会社</string>
+    <string name="destination">目的地</string>
+    <string name="fullName">氏名</string>
+    <string name="furigana">フリガナ</string>
+    <string name="phoneNumber">電話番号</string>
+    <string name="emailAddress">メールアドレス</string>
+    <string name="comments">コメント</string>
+    <string name="clearButton">クリア</string>
+    <string name="inputConfirmButton">入力確認</string>
 </resources>

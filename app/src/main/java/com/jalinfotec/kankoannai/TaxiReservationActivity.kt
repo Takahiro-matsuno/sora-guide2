@@ -41,6 +41,13 @@ class TaxiReservationActivity :
             // 乗車時間選択ダイアログを表示
             showTimePickerDialog(minHour, maxHour, hour, minute)
         }
+
+        inputClearButton.setOnClickListener {
+            time_edit.getText().clear()
+        }
+
+
+        /*
         // TODO テスト用に一時作成 画面遷移が完了したら消す
         toComp.setOnClickListener { startActivity<TaxiReservationCompActivity>(
             Pair(fromTaxiKey, fromTaxi),
@@ -172,7 +179,9 @@ https://www.jalan.net/jalan/doc/howto/kuchikomi_toukou.html
 """.trimIndent()))
             this.finish()
         }
+        */
     }
+
     /**
      * Time PickerDialog
      */
