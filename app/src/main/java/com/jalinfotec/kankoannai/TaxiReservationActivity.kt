@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_taxi_reservation.*
 import org.jetbrains.anko.startActivity
+import android.widget.DatePicker
+import android.app.DatePickerDialog
+import java.util.Calendar
+
 
 class TaxiReservationActivity :
     AppCompatActivity(),
@@ -41,9 +45,27 @@ class TaxiReservationActivity :
             // 乗車時間選択ダイアログを表示
             showTimePickerDialog(minHour, maxHour, hour, minute)
         }
+        editDay.setOnClickListener {
+            //乗車日選択ダイアログを表示
+            datePick()
 
+        }
+
+        //クリアボタンが押された場合の処理
         inputClearButton.setOnClickListener {
+            editDay.getText().clear()
             time_edit.getText().clear()
+            editNumberAdlt.getText().clear()
+            editNumberChld.getText().clear()
+            editDispatchNumber.getText().clear()
+            spinnerTaxi.setSelection(0)
+            editDest.getText().clear()
+            editName.getText().clear()
+            editFurigana.getText().clear()
+            editPhone.getText().clear()
+            editMail.getText().clear()
+            editComments.getText().clear()
+            
         }
 
 
@@ -198,4 +220,26 @@ https://www.jalan.net/jalan/doc/howto/kuchikomi_toukou.html
         setTimeText("$hourStr:$minuteStr")
     }
     private fun setTimeText(str: String) = time_edit.setText(str)
+
+    private fun datePick() {
+        // 現在の日付を取得
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        // 日付選択ダイアログの生成
+        val datePicker = DatePickerDialog(
+            this,
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // 「設定」ボタンクリック時の処理
+                val showMonth = monthOfYear.toInt()+1
+                editDay.setText(year.toString()+"/"+showMonth+"/"+dayOfMonth.toString())
+            },
+            year, month, day
+        )
+
+        // 表示
+        datePicker.show()
+    }
 }

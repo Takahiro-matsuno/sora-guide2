@@ -55,7 +55,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="date"
                         android:ems="10"
-                        android:id="@+id/editText3"/>
+                        android:id="@+id/editDay" android:focusable="false"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
@@ -67,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="time"
                         android:ems="10"
-                        android:id="@+id/time_edit"/>
+                        android:id="@+id/time_edit" android:focusable="false"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
@@ -78,7 +78,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:id="@+id/editText5" android:inputType="number"/>
+                        android:id="@+id/editNumberAdlt" android:inputType="number"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
@@ -89,7 +89,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:id="@+id/editText6" android:inputType="number"/>
+                        android:id="@+id/editNumberChld" android:inputType="number"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/editText7"/>
+                        android:id="@+id/editDispatchNumber"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -114,7 +114,8 @@
                         android:layout_height="wrap_content" android:id="@+id/textView7"/>
                 <Spinner
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/spinner2"/>
+                        android:layout_height="wrap_content" android:id="@+id/spinnerTaxi"
+                        android:entries="@array/taxiCompany"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -127,7 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:id="@+id/editText8" android:inputType="text"/>
+                        android:id="@+id/editDest" android:inputType="text"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -141,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText9"/>
+                        android:id="@+id/editName"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -155,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText2"/>
+                        android:id="@+id/editFurigana"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -169,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="phone"
                         android:ems="10"
-                        android:id="@+id/editText4"/>
+                        android:id="@+id/editPhone"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -183,7 +184,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
                         android:ems="10"
-                        android:id="@+id/editText10"/>
+                        android:id="@+id/editMail"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -196,7 +197,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:id="@+id/editText11" android:inputType="text"/>
+                        android:id="@+id/editComments" android:inputType="text"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -209,7 +210,7 @@
                 <Button
                         android:text="@string/inputConfirmButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/button3"/>
+                        android:layout_height="wrap_content" android:id="@+id/inputCoButton"/>
             </TableRow>
         </TableLayout>
     </ScrollView>
