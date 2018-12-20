@@ -1,6 +1,13 @@
 package com.jalinfotec.kankoannai
 
+import android.util.Log
+import com.google.gson.Gson
+import java.lang.Exception
+
 class TaxiStub {
+
+    private val logTag = this::class.java.name
+
     fun getTaxiCompanyInformation(success: Boolean): String? {
         return if (success) {
             "[" +
@@ -24,5 +31,17 @@ class TaxiStub {
                     "}" +
                     "]"
         } else null
+    }
+    fun postTaxiBookingInformation(success: Boolean, infoStr: String): String? {
+        return if (success) {
+            try {
+                Gson().fromJson(infoStr, TaxiBookingInformation::class.java)
+                "予約を受け付けました"
+            } catch (e: Exception) {
+                Log.d(logTag, e.message)
+                null
+            }
+        } else "予約に失敗しました"
+
     }
 }
