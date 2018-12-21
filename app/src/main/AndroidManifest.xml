@@ -31,6 +31,8 @@
         </activity>
         <activity android:name=".TaxiReservationCompActivity">
         </activity>
+        <activity android:name=".TaxiReservationCheckActivity">
+        </activity>
     </application>
 
 </manifest>

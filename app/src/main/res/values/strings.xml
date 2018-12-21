@@ -26,4 +26,7 @@
     <string name="comments">コメント</string>
     <string name="clearButton">クリア</string>
     <string name="inputConfirmButton">入力確認</string>
+    <string name="input_check">入力内容確認</string>
+    <string name="sendButton">送信</string>
+    <string name="backButton">戻る</string>
 </resources>

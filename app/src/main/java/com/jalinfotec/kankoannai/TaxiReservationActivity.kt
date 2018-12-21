@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.activity_taxi_reservation.*
 import org.jetbrains.anko.startActivity
 import android.widget.DatePicker
 import android.app.DatePickerDialog
+import android.content.Intent
 import java.util.Calendar
 
 
@@ -38,6 +39,18 @@ class TaxiReservationActivity :
         check_tab.setOnClickListener {
             // Myタクシー確認画面へ遷移
             startActivity<MyTaxiActivity>()
+            this.finish()
+        }
+
+        inputConfirmButton.setOnClickListener {
+            //予約内容確認画面へ遷移
+            startActivity<TaxiReservationCheckActivity>(Pair("DAY",editDay.text.toString()),Pair("TIME",time_edit.text.toString()),
+                Pair("ADLT",editNumberAdlt.text.toString()),Pair("CHLD",editNumberChld.text.toString()),
+                Pair("DISP",editDispatchNumber.text.toString()),Pair("TAXI",spinnerTaxi.selectedItem.toString()),
+                Pair("DEST",editDest.text.toString()),Pair("NAME",editName.text.toString()),
+                Pair("KANA",editFurigana.text.toString()),Pair("PHONE",editPhone.text.toString()),
+                Pair("MAIL",editMail.text.toString()),Pair("COMMENT",editComments.text.toString())
+            )
             this.finish()
         }
 

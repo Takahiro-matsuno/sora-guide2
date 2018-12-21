@@ -59,10 +59,10 @@
                         android:layout_width="197dp"
                         android:layout_height="wrap_content"
                         android:text="@string/rideOnDay"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editDay"
-                        android:layout_width="185dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="date"
@@ -76,7 +76,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/rideOnTime"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/time_edit"
                         android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/numberOfPeople_ADLT"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editNumberAdlt"
                         android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/numberOfPeople_CHLD"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/dispatchNumber"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editDispatchNumber"
                         android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/taxiCompany"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <Spinner
                         android:id="@+id/spinnerTaxi"
                         android:layout_width="match_parent"
@@ -158,7 +158,7 @@
                         android:text="@string/destination"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editDest"
                         android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
                         android:text="@string/fullName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editName"
                         android:layout_width="wrap_content"
@@ -192,7 +192,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/furigana"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editFurigana"
                         android:layout_width="wrap_content"
@@ -209,7 +209,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/phoneNumber"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editPhone"
                         android:layout_width="wrap_content"
@@ -226,7 +226,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/emailAddress"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editMail"
                         android:layout_width="wrap_content"
@@ -243,7 +243,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:text="@string/comments"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <EditText
                         android:id="@+id/editComments"
                         android:layout_width="wrap_content"
@@ -260,16 +260,16 @@
             >
                 <Button
                         android:id="@+id/inputClearButton"
-                        android:layout_width="191dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/clearButton"
-                />
+                        android:textSize="@dimen/text_size"/>
                 <Button
-                        android:id="@+id/inputCoButton"
+                        android:id="@+id/inputConfirmButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/inputConfirmButton"
-                />
+                        android:textSize="@dimen/text_size"/>
             </TableRow>
         </TableLayout>
     </ScrollView>
