@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.activity_taxi_reservation.*
 import org.jetbrains.anko.startActivity
 import android.widget.DatePicker
 import android.app.DatePickerDialog
+import kotlinx.android.synthetic.main.activity_my_taxi.*
 import java.util.Calendar
 
 
