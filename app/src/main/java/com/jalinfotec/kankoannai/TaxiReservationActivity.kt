@@ -7,6 +7,7 @@ import org.jetbrains.anko.startActivity
 import android.widget.DatePicker
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.support.design.widget.TabLayout
 import java.util.Calendar
 
 
@@ -36,15 +37,38 @@ class TaxiReservationActivity :
          * TODO 全画面別実装のため、TabではなくLinearLayoutとTextViewで実装している
          *   現状のままで問題ないか確認する
          */
-        check_tab.setOnClickListener {
-            // Myタクシー確認画面へ遷移
-            startActivity<MyTaxiActivity>()
-            this.finish()
-        }
+        // 指定したタブを選択状態にする
+        tabLayout.getTabAt(0)!!.select()
+        // タブのタップイベント
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            // 選択中のタブがユーザーによって再度選択されたときに呼び出される
+            override fun onTabReselected(p0: TabLayout.Tab?) {}
+
+            // タブが選択された状態を終了したときに呼び出される
+            override fun onTabSelected(p0: TabLayout.Tab?) {}
+
+            // タブが選択状態になると呼び出される
+            override fun onTabUnselected(p0: TabLayout.Tab?) {
+                when (tabLayout.selectedTabPosition) {
+                    0 -> {
+                        startActivity<TaxiReservationActivity>(
+                            Pair(TaxiReservationActivity.fromTaxiKey, TaxiReservationActivity.fromTaxi)
+                        )
+                    }
+                    1 -> {
+                        startActivity<MyTaxiActivity>(
+                            Pair(TaxiReservationActivity.fromTaxiKey, TaxiReservationActivity.fromTaxi)
+                        )
+                    }
+                }
+                finish()
+            }
+        })
 
         inputConfirmButton.setOnClickListener {
             //予約内容確認画面へ遷移
-            startActivity<TaxiReservationCheckActivity>(Pair("DAY",editDay.text.toString()),Pair("TIME",time_edit.text.toString()),
+            startActivity<TaxiReservationCheckActivity>(
+                Pair("DAY",editDay.text.toString()),Pair("TIME",time_edit.text.toString()),
                 Pair("ADLT",editNumberAdlt.text.toString()),Pair("CHLD",editNumberChld.text.toString()),
                 Pair("DISP",editDispatchNumber.text.toString()),Pair("TAXI",spinnerTaxi.selectedItem.toString()),
                 Pair("DEST",editDest.text.toString()),Pair("NAME",editName.text.toString()),
