@@ -9,6 +9,11 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.support.design.widget.TabLayout
 import java.util.Calendar
+//import sun.util.locale.provider.LocaleProviderAdapter.getAdapter
+import android.widget.SpinnerAdapter
+import android.widget.Spinner
+
+
 
 
 class TaxiReservationActivity :
@@ -33,6 +38,24 @@ class TaxiReservationActivity :
             overridePendingTransition(0, 0)
         }
 
+        // 入力内容確認画面から"戻る"ボタンで戻った場合の処理
+        editDay.setText(intent.getStringExtra("DAY"))
+        time_edit.setText(intent.getStringExtra("TIME"))
+        editNumberAdlt.setText(intent.getStringExtra("ADLT"))
+        editNumberChld.setText(intent.getStringExtra("CHLD"))
+        editDispatchNumber.setText(intent.getStringExtra("DISP"))
+        if(intent.getStringExtra("TAXI")!= null) {setSelection(spinnerTaxi,intent.getStringExtra("TAXI"))}
+        editDest.setText(intent.getStringExtra("DEST"))
+        editName.setText(intent.getStringExtra("NAME"))
+        editFurigana.setText(intent.getStringExtra("KANA"))
+        editPhone.setText(intent.getStringExtra("PHONE"))
+        editMail.setText(intent.getStringExtra("MAIL"))
+        editComments.setText(intent.getStringExtra("COMMENT"))
+
+
+
+
+        //
         /**
          * TODO 全画面別実装のため、TabではなくLinearLayoutとTextViewで実装している
          *   現状のままで問題ないか確認する
@@ -102,7 +125,6 @@ class TaxiReservationActivity :
             editPhone.getText().clear()
             editMail.getText().clear()
             editComments.getText().clear()
-            
         }
 
 
@@ -278,5 +300,17 @@ https://www.jalan.net/jalan/doc/howto/kuchikomi_toukou.html
 
         // 表示
         datePicker.show()
+    }
+    //spinnerと文字列を入れて、その文字をspinnerに設定する
+    private fun setSelection(spinner: Spinner, item: String) {
+        val adapter = spinner.adapter
+        var index = 0
+        for (i in 0 until adapter.count) {
+            if (adapter.getItem(i) == item) {
+                index = i
+                break
+            }
+        }
+        spinner.setSelection(index)
     }
 }
