@@ -5,7 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_taxi_reservation_comp.*
 import org.jetbrains.anko.startActivity
 
-class TaxiReservationCompActivity : AppCompatActivity() {
+class MyTaxiCancelActivity : AppCompatActivity() {
 
     companion object {
         const val resultKey = "RESULT_TEXT"
@@ -13,7 +13,7 @@ class TaxiReservationCompActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_taxi_reservation_comp)
+        setContentView(R.layout.activity_my_taxi_cancel)
 
         toReg_button.setOnClickListener {
             // タクシー予約画面へ遷移
@@ -25,10 +25,10 @@ class TaxiReservationCompActivity : AppCompatActivity() {
             startActivity<MyTaxiActivity>(Pair(TaxiReservationActivity.fromTaxiKey, TaxiReservationActivity.fromTaxi))
             this.finish()
         }
-        // 予約登録の結果を設定する
+        // 予約キャンセルの結果を設定する
         result_text.text =
-            if (savedInstanceState == null) intent.getStringExtra(resultKey)
-            else savedInstanceState.getString(resultKey)
+                if (savedInstanceState == null) intent.getStringExtra(resultKey)
+                else savedInstanceState.getString(resultKey)
     }
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
