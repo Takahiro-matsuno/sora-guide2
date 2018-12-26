@@ -31,7 +31,9 @@
         </activity>
         <activity android:name=".TaxiReservationCompActivity">
         </activity>
-        <activity android:name=".MyTaxiCancelActivity">
+        <activity android:name=".MyTaxiCancelCompActivity">
+        </activity>
+        <activity android:name=".MyTaxiChangeCompActivity">
         </activity>
     </application>
 
