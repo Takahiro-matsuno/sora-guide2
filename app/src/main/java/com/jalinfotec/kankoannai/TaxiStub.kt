@@ -49,11 +49,11 @@ class TaxiStub {
         return if (success) {
 
             "[" +
-                "{" +
+                    "{" +
                     "\"bookingId\":\"00001\"," +
-                    "\"bookingStatus\":\"予約中\"," +
-                    "\"rideOnData\":\"2010-12-01\"," +
-                    "\"rideOnTime\":\"12:00:00\"," +
+                    "\"bookingStatus\":\"1\"," +
+                    "\"rideOnData\":\"2010-12-01T00:00:00.000Z\"," +
+                    //"\"rideOnTime\":\"12:00:00\"," +
                     "\"adultPassengerNumber\":2," +
                     "\"childPassengerNumber\":3," +
                     "\"taxiNumber\":2," +
@@ -67,12 +67,12 @@ class TaxiStub {
                     "\"carNumber\":\"ほげほげほげ\"," +
                     "\"companyPhoneNumber\":\"ほげほげほげほげ\"," +
                     "\"taxiNotice\":\"ほげー\"" +
-                "}," +
-                "{" +
+                    "}," +
+                    "{" +
                     "\"bookingId\":\"00002\"," +
-                    "\"bookingStatus\":\"編集中\"," +
-                    "\"rideOnData\":\"2010-12-01\"," +
-                    "\"rideOnTime\":\"12:00:00\"," +
+                    "\"bookingStatus\":\"2\"," +
+                    "\"rideOnData\":\"2010-12-01T00:00:00.000Z\"," +
+                    //"\"rideOnTime\":\"12:00:00\"," +
                     "\"adultPassengerNumber\":2," +
                     "\"childPassengerNumber\":3," +
                     "\"taxiNumber\":2," +
@@ -86,12 +86,12 @@ class TaxiStub {
                     "\"carNumber\":\"ほげほげほげ\"," +
                     "\"companyPhoneNumber\":\"ほげほげほげほげ\"," +
                     "\"taxiNotice\":\"ほげー\"" +
-                "}," +
-                "{" +
+                    "}," +
+                    "{" +
                     "\"bookingId\":\"00003\"," +
-                    "\"bookingStatus\":\"キャンセル済み\"," +
-                    "\"rideOnData\":\"2010-12-01\"," +
-                    "\"rideOnTime\":\"12:00:00\"," +
+                    "\"bookingStatus\":\"3\"," +
+                    "\"rideOnData\":\"2010-12-01T00:00:00.000Z\"," +
+                    //"\"rideOnTime\":\"12:00:00\"," +
                     "\"adultPassengerNumber\":2," +
                     "\"childPassengerNumber\":3," +
                     "\"taxiNumber\":2," +
@@ -103,8 +103,8 @@ class TaxiStub {
                     "\"mailAddress\":\"ほげほげ\"," +
                     "\"userComment\":\"ほげほげほげ\"," +
                     "\"carNumber\":\"ほげほげほげ\"," +
-                    "\"companyPhoneNumber\":\"ほげほげほげほげ\"," +
-                "}," +
+                    "\"companyPhoneNumber\":\"ほげほげほげほげ\"" +
+                    "}" +
             "]"
         } else null
     }

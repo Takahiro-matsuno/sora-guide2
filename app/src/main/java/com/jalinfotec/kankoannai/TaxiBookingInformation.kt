@@ -6,7 +6,7 @@ import java.sql.Time
 class TaxiBookingInformation(
     val bookingId: String?,             // 予約番号
     val bookingStatus: Int,             // ステータス
-    val rideOnData: Date,               // 乗車日付
+    val rideOnDate: Date,               // 乗車日付
     val rideOnTime: Time,               // 乗車時間
     val adultPassengerNumber: Int,      // 人数（大人）
     val childPassengerNumber: Int,      // 人数（子供）
