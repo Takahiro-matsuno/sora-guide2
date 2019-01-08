@@ -3,19 +3,21 @@ package com.jalinfotec.kankoannai
 import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.annotation.IntegerRes
 import android.support.design.widget.TabLayout
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.MediaController
+import android.widget.TextClock
 import android.widget.TextView
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
+import com.jalinfotec.kankoannai.R.id.*
 import kotlinx.android.synthetic.main.activity_my_taxi.*
+import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 
@@ -46,8 +48,9 @@ class MyTaxiActivity : AppCompatActivity() {
                     Log.i("えらあああああ", "${e.message}")
                     emptyList()
                 }
+
         //取得した予約情報を画面表示用に変換するアダプタの生成
-        val adapter = MyTaxiListAdapter(applicationContext, bookingList)
+        val adapter = MyTaxiListAdapter(this, bookingList)
         //画面表示
         val listView: ListView = findViewById(R.id.myTaxiBookingList)
         listView.adapter = adapter
@@ -82,20 +85,38 @@ class MyTaxiActivity : AppCompatActivity() {
     }
 }
 
-class MyTaxiListAdapter(context: Context, MyTaxiList: List<TaxiBookingInformation>) :
+class MyTaxiListAdapter(context: Context, val MyTaxiList: List<TaxiBookingInformation>) :
     ArrayAdapter<TaxiBookingInformation>(context, 0, MyTaxiList) {
     private val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val view = convertView ?: layoutInflater.inflate(R.layout.my_taxi_list_item, parent, false)
+        val df = SimpleDateFormat("yyyy/MM/dd")
+        val tf = SimpleDateFormat("hh:mm")
+        view.find<TextView>(bookingIdView).text = MyTaxiList[position].bookingId
+        Log.d("うええええええ",MyTaxiList[position].rideOnDate.toString())
+        //view.find<TextView>(rideOnDateView).text = df.format(MyTaxiList[position].rideOnDate)
+        //view.find<TextView>(rideOnTimeView).text = tf.format(MyTaxiList[position].rideOnDate)
+        view.find<TextView>(bookingStatusView).text = Integer.toString(MyTaxiList[position].bookingStatus)
+
+        return view!!
+    }
+}
+    /*
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view = convertView
         var holder: ViewHolder
 
         if (view == null) {
             view = layoutInflater.inflate(R.layout.my_taxi_list_item, parent, false)
-            /*holder = ViewHolder(
-                view?.bookingId!!,
-            )*/
-            //view.tag = holder
+            view.find<TextView>(bookingIdView).text = ""
+            holder = ViewHolder(
+                view.find(bookingIdView),
+                view.find(rideOnDateView),
+                view.find(rideOnTimeView),
+                view.find(bookingIdView),
+            )
+            view.tag = holder
         } else {
             holder = view.tag as ViewHolder
         }
@@ -107,7 +128,7 @@ class MyTaxiListAdapter(context: Context, MyTaxiList: List<TaxiBookingInformatio
         holder.rideOnTime.text = tf.format(bookingData.rideOnDate)
         holder.bookingStatus.text = Integer.toString(bookingData.bookingStatus)
 
-        return view
+        return view!!
     }
 }
 
@@ -116,4 +137,4 @@ data class ViewHolder(
     val rideOnDate: TextView,
     val rideOnTime: TextView,
     val bookingStatus: TextView
-)
+)*/

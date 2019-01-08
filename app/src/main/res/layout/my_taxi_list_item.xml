@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                              android:layout_height="match_parent">
 
     <TextView
             android:text="rideOnDate"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:id="@+id/rideOnDate" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            android:id="@+id/rideOnDateView" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:textSize="@dimen/text_size" android:lineSpacingExtra="bookingId"
-            app:layout_constraintTop_toBottomOf="@+id/bookingId"/>
+            android:textSize="@dimen/text_size" android:lineSpacingExtra="1pt"
+            app:layout_constraintTop_toBottomOf="@+id/bookingIdView"/>
     <TextView
             android:text="rideOnTime"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:id="@+id/rideOnTime" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/rideOnTimeView" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:textSize="@dimen/text_size" android:lineSpacingExtra="bookingId"
-            app:layout_constraintTop_toBottomOf="@+id/rideOnDate"/>
+            android:textSize="@dimen/text_size" android:lineSpacingExtra="1pt"
+            app:layout_constraintTop_toBottomOf="@+id/rideOnDateView"/>
     <TextView
             android:text="bookingStatus"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:id="@+id/bookingStatus" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/bookingStatusView" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:textSize="@dimen/text_size" android:lineSpacingExtra="bookingId"
-            app:layout_constraintTop_toBottomOf="@+id/rideOnTime"/>
+            android:textSize="@dimen/text_size" android:lineSpacingExtra="1pt"
+            app:layout_constraintTop_toBottomOf="@+id/rideOnTimeView"/>
     <TextView
             android:text="bookingId"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bookingId" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
-            android:textSize="@dimen/text_size" android:textStyle="bold" android:lineSpacingExtra="bookingId"/>
+            android:layout_height="30dp"
+            android:id="@+id/bookingIdView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp" app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/text_size" android:textStyle="bold" android:lineSpacingExtra="1pt"/>
 </android.support.constraint.ConstraintLayout>

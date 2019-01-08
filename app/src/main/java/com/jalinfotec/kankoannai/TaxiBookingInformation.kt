@@ -1,13 +1,13 @@
 package com.jalinfotec.kankoannai
 
-import java.sql.Date
 import java.sql.Time
+import java.util.*
 
 class TaxiBookingInformation(
     val bookingId: String?,             // 予約番号
     val bookingStatus: Int,             // ステータス
     val rideOnDate: Date,               // 乗車日付
-    val rideOnTime: Time,               // 乗車時間
+    //val rideOnTime: Time,               // 乗車時間
     val adultPassengerNumber: Int,      // 人数（大人）
     val childPassengerNumber: Int,      // 人数（子供）
     val taxiNumber: Int,                // 配車台数
