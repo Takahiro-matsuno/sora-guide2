@@ -1,9 +1,12 @@
 package com.jalinfotec.kankoannai
 
 import android.content.Context
+import android.content.Intent
+import org.jetbrains.anko.startActivity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +14,13 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
+import android.widget.Toast
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.jalinfotec.kankoannai.R.id.*
 import kotlinx.android.synthetic.main.activity_my_taxi.*
+import kotlinx.android.synthetic.main.activity_my_taxi_detail.*
 import org.jetbrains.anko.find
-import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 
 class MyTaxiActivity : AppCompatActivity() {
@@ -52,6 +56,17 @@ class MyTaxiActivity : AppCompatActivity() {
         //画面表示
         val listView: ListView = findViewById(R.id.myTaxiBookingList)
         listView.adapter = adapter
+
+        //リストのタップイベント
+        listView.setOnItemClickListener { adapterView, view, position, id ->
+            val bookingId = bookingList[position].bookingId
+            //Toast.makeText(this,"$bookingId",Toast.LENGTH_SHORT)
+            var intent = Intent(this, MyTaxiDetailActivity::class.java)
+            intent.putExtra("ID",bookingId)
+            startActivity(intent)
+            this.finish()
+        }
+
 
         // タブのタップイベント
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
@@ -95,10 +110,6 @@ class MyTaxiListAdapter(context: Context, val myTaxiList: List<TaxiBookingInform
         view.find<TextView>(rideOnDateView).text = df.format(myTaxiList[position].rideOnDate)
         view.find<TextView>(rideOnTimeView).text = tf.format(myTaxiList[position].rideOnDate)
         view.find<TextView>(bookingStatusView).text = Integer.toString(myTaxiList[position].bookingStatus)
-
-        view.setOnClickListener{
-            Log.i("テスト", view.find<TextView>(bookingIdView).text.toString())
-        }
 
         return view
     }

@@ -35,6 +35,7 @@
         </activity>
         <activity android:name=".MyTaxiChangeCompActivity">
         </activity>
+        <activity android:name=".MyTaxiDetailActivity"/>
     </application>
 
 </manifest>
