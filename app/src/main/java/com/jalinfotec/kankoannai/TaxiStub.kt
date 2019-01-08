@@ -52,7 +52,7 @@ class TaxiStub {
                     "{" +
                     "\"bookingId\":\"00001\"," +
                     "\"bookingStatus\":\"1\"," +
-                    "\"rideOnData\":\"2010-12-01T00:00:00.000Z\"," +
+                    "\"rideOnDate\":\"2010-12-01T00:00:00.000Z\"," +
                     //"\"rideOnTime\":\"12:00:00\"," +
                     "\"adultPassengerNumber\":2," +
                     "\"childPassengerNumber\":3," +
@@ -71,7 +71,7 @@ class TaxiStub {
                     "{" +
                     "\"bookingId\":\"00002\"," +
                     "\"bookingStatus\":\"2\"," +
-                    "\"rideOnData\":\"2010-12-01T00:00:00.000Z\"," +
+                    "\"rideOnDate\":\"2010-12-01T00:00:00.000Z\"," +
                     //"\"rideOnTime\":\"12:00:00\"," +
                     "\"adultPassengerNumber\":2," +
                     "\"childPassengerNumber\":3," +
@@ -90,7 +90,7 @@ class TaxiStub {
                     "{" +
                     "\"bookingId\":\"00003\"," +
                     "\"bookingStatus\":\"3\"," +
-                    "\"rideOnData\":\"2010-12-01T00:00:00.000Z\"," +
+                    "\"rideOnDate\":\"2010-12-01T00:00:00.000Z\"," +
                     //"\"rideOnTime\":\"12:00:00\"," +
                     "\"adultPassengerNumber\":2," +
                     "\"childPassengerNumber\":3," +
