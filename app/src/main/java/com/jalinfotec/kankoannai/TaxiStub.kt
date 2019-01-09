@@ -112,7 +112,7 @@ class TaxiStub {
                     "\"carNumber\":\"ほげほげほげ\"," +
                     "\"companyPhoneNumber\":\"ほげほげほげほげ\"" +
                     "}" +
-                    "]"
+            "]"
         } else null
     }
 
