@@ -1,4 +1,5 @@
 <resources>
+    //全般
     <string name="app_name">Soragouide</string>
     <string name="text_select_label">表示するエリアの選択</string>
     <string name="chooseButtun">選択した県で表示</string>
@@ -8,12 +9,13 @@
     <string name="flightButton">フライト情報</string>
     <string name="taxiButton">タクシー予約</string>
     <string name="colon">:</string>
-    <string name="booking_registration">予約登録</string>
-    <string name="to_booking_registration">予約登録へ</string>
-    <string name="booking_check">予約確認</string>
-    <string name="to_booking_check">予約確認へ</string>
-    <string name="rideOnTime">乗車時間</string>
+
+    //タクシー
+    //予約情報
+    <string name="bookingId">予約番号</string>
+    <string name="bookingStatus">ステータス</string>
     <string name="rideOnDay">乗車日</string>
+    <string name="rideOnTime">乗車時間</string>
     <string name="numberOfPeople_ADLT">人数（大人）</string>
     <string name="numberOfPeople_CHLD">人数（子供）</string>
     <string name="dispatchNumber">配車台数</string>
@@ -24,13 +26,25 @@
     <string name="phoneNumber">電話番号</string>
     <string name="emailAddress">メールアドレス</string>
     <string name="comments">コメント</string>
+    <string name="carNumber">車両番号</string>
+    <string name="companyPhoneNumber">連絡先</string>
+    <string name="taxiNotice">ご連絡事項</string>
+
+    //予約登録画面
+    <string name="booking_registration">予約登録</string>
+    <string name="to_booking_registration">予約登録へ</string>
+    <string name="booking_check">予約確認</string>
+    <string name="to_booking_check">予約確認へ</string>
     <string name="clearButton">クリア</string>
     <string name="inputConfirmButton">入力確認</string>
+
+    //入力確認画面
     <string name="input_check">入力内容確認</string>
-    <string name="sendButton">送信</string>
     <string name="backButton">戻る</string>
+    <string name="sendButton">送信</string>
+
+    //予約内容詳細画面
     <string name="changeButton">変更する</string>
     <string name="cancelButton">取り消す</string>
-    <string name="bookingId">予約番号</string>
-    <string name="bookingStatus">ステータス</string>
+
 </resources>
