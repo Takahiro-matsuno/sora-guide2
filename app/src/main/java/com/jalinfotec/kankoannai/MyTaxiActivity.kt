@@ -6,7 +6,6 @@ import org.jetbrains.anko.startActivity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
-import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,12 +13,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
-import android.widget.Toast
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.jalinfotec.kankoannai.R.id.*
 import kotlinx.android.synthetic.main.activity_my_taxi.*
-import kotlinx.android.synthetic.main.activity_my_taxi_detail.*
 import org.jetbrains.anko.find
 import java.text.SimpleDateFormat
 
@@ -67,7 +64,6 @@ class MyTaxiActivity : AppCompatActivity() {
             this.finish()
         }
 
-
         // タブのタップイベント
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             // 選択中のタブがユーザーによって再度選択されたときに呼び出される
@@ -94,26 +90,31 @@ class MyTaxiActivity : AppCompatActivity() {
                 finish()
             }
         })
+    }
 
+    override fun onBackPressed() {
+        startActivity<TopMenuActivity>()
+        finish()
+    }
+
+    class MyTaxiListAdapter(context: Context, val myTaxiList: List<TaxiBookingInformation>) :
+        ArrayAdapter<TaxiBookingInformation>(context, 0, myTaxiList) {
+        private val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            val view = convertView ?: layoutInflater.inflate(R.layout.my_taxi_list_item, parent, false)
+            val df = SimpleDateFormat("yyyy/MM/dd")
+            val tf = SimpleDateFormat("hh:mm")
+            view.find<TextView>(bookingIdView).text = myTaxiList[position].bookingId
+            view.find<TextView>(rideOnDateView).text = df.format(myTaxiList[position].rideOnDate)
+            view.find<TextView>(rideOnTimeView).text = tf.format(myTaxiList[position].rideOnDate)
+            view.find<TextView>(bookingStatusView).text = Integer.toString(myTaxiList[position].bookingStatus)
+
+            return view
+        }
     }
 }
 
-class MyTaxiListAdapter(context: Context, val myTaxiList: List<TaxiBookingInformation>) :
-    ArrayAdapter<TaxiBookingInformation>(context, 0, myTaxiList) {
-    private val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view = convertView ?: layoutInflater.inflate(R.layout.my_taxi_list_item, parent, false)
-        val df = SimpleDateFormat("yyyy/MM/dd")
-        val tf = SimpleDateFormat("hh:mm")
-        view.find<TextView>(bookingIdView).text = myTaxiList[position].bookingId
-        view.find<TextView>(rideOnDateView).text = df.format(myTaxiList[position].rideOnDate)
-        view.find<TextView>(rideOnTimeView).text = tf.format(myTaxiList[position].rideOnDate)
-        view.find<TextView>(bookingStatusView).text = Integer.toString(myTaxiList[position].bookingStatus)
-
-        return view
-    }
-}
 /*
 override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
     var view = convertView
