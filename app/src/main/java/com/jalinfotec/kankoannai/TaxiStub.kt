@@ -134,10 +134,10 @@ class TaxiStub {
                 "ほげほげ",
                 "ほげほげ",
                 "めあど",
-                "りようこめ",
+                "りようコメント・・・文字数オーバー時の表示確認用あああああああ",
                 "しゃりょう番号",
                 "れんらくさき",
-                "ごあんないじこう"
+                "文字数オーバーの確認用テキストああああああああああああああ"
             )
             bookingInfoList.add(bookingInfo)
         }
@@ -149,5 +149,9 @@ class TaxiStub {
         }
 
         return null
+    }
+
+    fun CancelBookingAction(id: String):Boolean{
+        return true
     }
 }

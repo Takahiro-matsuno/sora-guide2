@@ -19,11 +19,11 @@ class MyTaxiDetailActivity : AppCompatActivity() {
 
         val bookingDetailInfo = TaxiStub().getTaxiBookingInfo(bookingId.text.toString())
 
-        if(bookingDetailInfo != null) {
+        if (bookingDetailInfo != null) {
             val df = SimpleDateFormat("yyyy/MM/dd")
             val tf = SimpleDateFormat("hh:mm")
             day.text = df.format(bookingDetailInfo.rideOnDate)
-            time.text =  tf.format(bookingDetailInfo.rideOnDate)
+            time.text = tf.format(bookingDetailInfo.rideOnDate)
             adlt.text = bookingDetailInfo.adultPassengerNumber.toString()
             chld.text = bookingDetailInfo.childPassengerNumber.toString()
             disp.text = bookingDetailInfo.taxiNumber.toString()
@@ -38,35 +38,19 @@ class MyTaxiDetailActivity : AppCompatActivity() {
             companyPhoneNumber.text = bookingDetailInfo.companyPhoneNumber
             taxiNotice.text = bookingDetailInfo.taxiNotice
         }
-        /*
-        day.text = intent.getStringExtra("DAY")
-        time.text = intent.getStringExtra("TIME")
-        adlt.text = intent.getStringExtra("ADLT")
-        chld.text = intent.getStringExtra("CHLD")
-        disp.text = intent.getStringExtra("DISP")
-        taxi.text = intent.getStringExtra("TAXI")
-        dest.text = intent.getStringExtra("DEST")
-        name.text = intent.getStringExtra("NAME")
-        kana.text = intent.getStringExtra("KANA")
-        phone.text = intent.getStringExtra("PHONE")
-        mail.text = intent.getStringExtra("MAIL")
-        comment.text = intent.getStringExtra("COMMENT")
 
-        changeButton.setOnClickListener {
-            startActivity<TaxiReservationActivity>(
-                Pair("DAY",day.text),Pair("TIME",time.text),
-                Pair("ADLT",adlt.text),Pair("CHLD",chld.text),
-                Pair("DISP",disp.text),Pair("TAXI",taxi.text),
-                Pair("DEST",dest.text),Pair("NAME",name.text),
-                Pair("KANA",kana.text),Pair("PHONE",phone.text),
-                Pair("MAIL",mail.text),Pair("COMMENT",comment.text)
-            )
-            this.finish()
+        changeButton.setOnClickListener{
+            //TODO 予約変更画面作成後に更新
         }
-        // サーバに予約情報を送信する
-        cancelButton.setOnClickListener { postBookingInfo() }
-        */
 
+        cancelButton.setOnClickListener {
+            if(TaxiStub().CancelBookingAction(bookingId.text.toString())){
+                startActivity<MyTaxiCancelCompActivity>()
+            }
+            else{
+                //TODO 予約取り消しに失敗した場合のエラー表示
+            }
+        }
     }
 
     //戻るボタン制御

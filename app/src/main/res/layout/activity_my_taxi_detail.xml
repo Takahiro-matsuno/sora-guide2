@@ -33,11 +33,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/bookingId"
-                        android:layout_width="182dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView29"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="199dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/bookingId"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -46,11 +48,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/rideOnDay"
-                        android:layout_width="182dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView28"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="199dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/day"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -59,11 +63,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/rideOnTime"
-                        android:layout_width="203dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView30"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/time"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -72,11 +78,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/numberOfPeople_ADLT"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView33"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/adlt"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -85,11 +93,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/numberOfPeople_CHLD"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView34"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/chld"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -98,11 +108,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/dispatchNumber"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView27"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/disp"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -111,11 +123,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/taxiCompany"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView25"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/taxi"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -124,11 +138,13 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/destination"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView23"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/dest"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
@@ -137,90 +153,107 @@
                     android:layout_height="match_parent">
                 <TextView
                         android:text="@string/fullName"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView20"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/name"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:text="@string/furigana"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView12"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/kana"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:text="@string/phoneNumber"
-                        android:layout_width="176dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView14"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/phone"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:text="@string/emailAddress"
-                        android:layout_width="191dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView16"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/mail"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:text="@string/comments"
-                        android:layout_width="189dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView18"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="206dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/comment"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:text="@string/carNumber"
-                        android:layout_width="189dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView19"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="206dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/carNumber"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:text="@string/companyPhoneNumber"
-                        android:layout_width="189dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView35"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="206dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/companyPhoneNumber"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:text="@string/taxiNotice"
-                        android:layout_width="189dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/textView36"
                         android:textSize="@dimen/text_size"/>
                 <TextView
-                        android:layout_width="206dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content" android:id="@+id/taxiNotice"
-                        android:textSize="@dimen/text_size"/>
+                        android:textSize="@dimen/text_size"
+                        android:inputType="textMultiLine" tools:ignore="TextViewEdits"/>
             </TableRow>
         </TableLayout>
     </ScrollView>
