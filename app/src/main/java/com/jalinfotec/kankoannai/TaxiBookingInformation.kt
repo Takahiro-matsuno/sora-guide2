@@ -13,7 +13,7 @@ class TaxiBookingInformation(
     val taxiNumber: Int,                // 配車台数
     val companyId: String,              // 会社ID
     val destination: String?,           // 目的地
-    val name: String,                   // 指名
+    val name: String,                   // 氏名
     val phonetic: String,               // フリガナ
     val userPhoneNumber: String,        // 電話番号
     val mailAddress: String,            // メールアドレス

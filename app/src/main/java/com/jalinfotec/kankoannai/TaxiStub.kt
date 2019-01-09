@@ -32,17 +32,17 @@ class TaxiStub {
                     "]"
         } else null
     }
-    fun postTaxiBookingInformation(success: Boolean, infoStr: String): String? {
+    fun postTaxiBookingInformation(success: Boolean, bookingInfo: TaxiBookingInformation): String? {
         return if (success) {
             try {
-                Gson().fromJson(infoStr, TaxiBookingInformation::class.java)
+                val str = Gson().toJson(bookingInfo, TaxiBookingInformation::class.java)
+                Log.d(logTag, "json:$str")
                 "予約を受け付けました"
             } catch (e: Exception) {
                 Log.d(logTag, e.message)
                 null
             }
-        } else "予約に失敗しました"
-
+        } else null
     }
     fun getTaxiBookingInfo(success: Boolean): String? {
 

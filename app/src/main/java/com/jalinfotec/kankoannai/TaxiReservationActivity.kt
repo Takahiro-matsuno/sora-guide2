@@ -6,8 +6,14 @@ import kotlinx.android.synthetic.main.activity_taxi_reservation.*
 import org.jetbrains.anko.startActivity
 import android.widget.DatePicker
 import android.app.DatePickerDialog
-import kotlinx.android.synthetic.main.activity_my_taxi.*
+import android.content.Intent
+import android.support.design.widget.TabLayout
 import java.util.Calendar
+//import sun.util.locale.provider.LocaleProviderAdapter.getAdapter
+import android.widget.SpinnerAdapter
+import android.widget.Spinner
+
+
 
 
 class TaxiReservationActivity :
@@ -32,13 +38,66 @@ class TaxiReservationActivity :
             overridePendingTransition(0, 0)
         }
 
+        // 入力内容確認画面から"戻る"ボタンで戻った場合の処理
+        editDay.setText(intent.getStringExtra("DAY"))
+        time_edit.setText(intent.getStringExtra("TIME"))
+        editNumberAdlt.setText(intent.getStringExtra("ADLT"))
+        editNumberChld.setText(intent.getStringExtra("CHLD"))
+        editDispatchNumber.setText(intent.getStringExtra("DISP"))
+        if(intent.getStringExtra("TAXI")!= null) {setSelection(spinnerTaxi,intent.getStringExtra("TAXI"))}
+        editDest.setText(intent.getStringExtra("DEST"))
+        editName.setText(intent.getStringExtra("NAME"))
+        editFurigana.setText(intent.getStringExtra("KANA"))
+        editPhone.setText(intent.getStringExtra("PHONE"))
+        editMail.setText(intent.getStringExtra("MAIL"))
+        editComments.setText(intent.getStringExtra("COMMENT"))
+
+
+
+
+        //
         /**
          * TODO 全画面別実装のため、TabではなくLinearLayoutとTextViewで実装している
          *   現状のままで問題ないか確認する
          */
-        check_tab.setOnClickListener {
-            // Myタクシー確認画面へ遷移
-            startActivity<MyTaxiActivity>()
+        // 指定したタブを選択状態にする
+        tabLayout.getTabAt(0)!!.select()
+        // タブのタップイベント
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            // 選択中のタブがユーザーによって再度選択されたときに呼び出される
+            override fun onTabReselected(p0: TabLayout.Tab?) {}
+
+            // タブが選択された状態を終了したときに呼び出される
+            override fun onTabSelected(p0: TabLayout.Tab?) {}
+
+            // タブが選択状態になると呼び出される
+            override fun onTabUnselected(p0: TabLayout.Tab?) {
+                when (tabLayout.selectedTabPosition) {
+                    0 -> {
+                        startActivity<TaxiReservationActivity>(
+                            Pair(TaxiReservationActivity.fromTaxiKey, TaxiReservationActivity.fromTaxi)
+                        )
+                    }
+                    1 -> {
+                        startActivity<MyTaxiActivity>(
+                            Pair(TaxiReservationActivity.fromTaxiKey, TaxiReservationActivity.fromTaxi)
+                        )
+                    }
+                }
+                finish()
+            }
+        })
+
+        inputConfirmButton.setOnClickListener {
+            //予約内容確認画面へ遷移
+            startActivity<TaxiReservationCheckActivity>(
+                Pair("DAY",editDay.text.toString()),Pair("TIME",time_edit.text.toString()),
+                Pair("ADLT",editNumberAdlt.text.toString()),Pair("CHLD",editNumberChld.text.toString()),
+                Pair("DISP",editDispatchNumber.text.toString()),Pair("TAXI",spinnerTaxi.selectedItem.toString()),
+                Pair("DEST",editDest.text.toString()),Pair("NAME",editName.text.toString()),
+                Pair("KANA",editFurigana.text.toString()),Pair("PHONE",editPhone.text.toString()),
+                Pair("MAIL",editMail.text.toString()),Pair("COMMENT",editComments.text.toString())
+            )
             this.finish()
         }
 
@@ -66,7 +125,6 @@ class TaxiReservationActivity :
             editPhone.getText().clear()
             editMail.getText().clear()
             editComments.getText().clear()
-            
         }
 
 
@@ -242,5 +300,17 @@ https://www.jalan.net/jalan/doc/howto/kuchikomi_toukou.html
 
         // 表示
         datePicker.show()
+    }
+    //spinnerと文字列を入れて、その文字をspinnerに設定する
+    private fun setSelection(spinner: Spinner, item: String) {
+        val adapter = spinner.adapter
+        var index = 0
+        for (i in 0 until adapter.count) {
+            if (adapter.getItem(i) == item) {
+                index = i
+                break
+            }
+        }
+        spinner.setSelection(index)
     }
 }
