@@ -62,7 +62,7 @@ class TaxiReservationCheckActivity : AppCompatActivity() {
             null,
             0,
             Date(date.time),
-            Time(date.time),
+           // Time(date.time),
             adlt.text.toString().toInt(),
             chld.text.toString().toInt(),
             disp.text.toString().toInt(),

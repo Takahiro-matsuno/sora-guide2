@@ -8,12 +8,12 @@ import android.widget.DatePicker
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.support.design.widget.TabLayout
+import android.widget.NumberPicker
 import java.util.Calendar
 //import sun.util.locale.provider.LocaleProviderAdapter.getAdapter
 import android.widget.SpinnerAdapter
 import android.widget.Spinner
-
-
+import kotlinx.android.synthetic.main.dialog_number_picker.*
 
 
 class TaxiReservationActivity :
@@ -108,23 +108,25 @@ class TaxiReservationActivity :
         editDay.setOnClickListener {
             //乗車日選択ダイアログを表示
             datePick()
-
         }
+
+
 
         //クリアボタンが押された場合の処理
         inputClearButton.setOnClickListener {
-            editDay.getText().clear()
-            time_edit.getText().clear()
-            editNumberAdlt.getText().clear()
-            editNumberChld.getText().clear()
-            editDispatchNumber.getText().clear()
+            //editDay.getText().clear()
+            editDay.text.clear()
+            time_edit.text.clear()
+            editNumberAdlt.text.clear()
+            editNumberChld.text.clear()
+            editDispatchNumber.text.clear()
             spinnerTaxi.setSelection(0)
-            editDest.getText().clear()
-            editName.getText().clear()
-            editFurigana.getText().clear()
-            editPhone.getText().clear()
-            editMail.getText().clear()
-            editComments.getText().clear()
+            editDest.text.clear()
+            editName.text.clear()
+            editFurigana.text.clear()
+            editPhone.text.clear()
+            editMail.text.clear()
+            editComments.text.clear()
         }
 
 
@@ -280,6 +282,9 @@ https://www.jalan.net/jalan/doc/howto/kuchikomi_toukou.html
     }
     private fun setTimeText(str: String) = time_edit.setText(str)
 
+    /**
+     *  Date PickerDialog
+     */
     private fun datePick() {
         // 現在の日付を取得
         val calendar = Calendar.getInstance()
@@ -290,6 +295,7 @@ https://www.jalan.net/jalan/doc/howto/kuchikomi_toukou.html
         // 日付選択ダイアログの生成
         val datePicker = DatePickerDialog(
             this,
+
             DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 // 「設定」ボタンクリック時の処理
                 val showMonth = monthOfYear.toInt()+1
@@ -297,10 +303,14 @@ https://www.jalan.net/jalan/doc/howto/kuchikomi_toukou.html
             },
             year, month, day
         )
-
+        // 過去日を指定不可に設定
+        datePicker.datePicker.minDate = System.currentTimeMillis() - 1000
+        //一年以上先の日付は指定不可に設定
+        datePicker.datePicker.maxDate = System.currentTimeMillis()+31557600000
         // 表示
         datePicker.show()
     }
+
     //spinnerと文字列を入れて、その文字をspinnerに設定する
     private fun setSelection(spinner: Spinner, item: String) {
         val adapter = spinner.adapter
