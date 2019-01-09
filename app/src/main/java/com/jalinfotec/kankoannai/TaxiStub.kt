@@ -1,8 +1,13 @@
 package com.jalinfotec.kankoannai
 
+import android.annotation.SuppressLint
 import android.util.Log
 import com.google.gson.Gson
+import com.jalinfotec.kankoannai.R.string.bookingId
 import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class TaxiStub {
 
@@ -32,6 +37,7 @@ class TaxiStub {
                     "]"
         } else null
     }
+
     fun postTaxiBookingInformation(success: Boolean, bookingInfo: TaxiBookingInformation): String? {
         return if (success) {
             try {
@@ -44,6 +50,7 @@ class TaxiStub {
             }
         } else null
     }
+
     fun getTaxiBookingInfo(success: Boolean): String? {
 
         return if (success) {
@@ -105,7 +112,42 @@ class TaxiStub {
                     "\"carNumber\":\"ほげほげほげ\"," +
                     "\"companyPhoneNumber\":\"ほげほげほげほげ\"" +
                     "}" +
-            "]"
+                    "]"
         } else null
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun getTaxiBookingInfo(id: String): TaxiBookingInformation? {
+        val bookingInfoList = ArrayList<TaxiBookingInformation>()
+
+        for (count in 0..2) {
+            val bookingInfo = TaxiBookingInformation(
+                "0000" + (count+1).toString(),
+                0,
+                SimpleDateFormat("yyyy/MM/dd hh:mm").parse("2018/11/12 5:00"),
+                count+1,
+                1,
+                1,
+                "1000",
+                "お台場",
+                "なまえ",
+                "ほげほげ",
+                "ほげほげ",
+                "めあど",
+                "りようこめ",
+                "しゃりょう番号",
+                "れんらくさき",
+                "ごあんないじこう"
+            )
+            bookingInfoList.add(bookingInfo)
+        }
+
+        for (count in 0..bookingInfoList.lastIndex) {
+            if (id == bookingInfoList[count].bookingId) {
+                return bookingInfoList[count]
+            }
+        }
+
+        return null
     }
 }
