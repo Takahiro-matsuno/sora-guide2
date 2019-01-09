@@ -2,6 +2,7 @@ package com.jalinfotec.kankoannai
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_my_taxi_detail.*
 import org.jetbrains.anko.startActivity
@@ -17,8 +18,10 @@ class MyTaxiDetailActivity : AppCompatActivity() {
         //予約登録画面からの情報を表示
         bookingId.text = intent.getStringExtra("ID")
 
+        //予約番号をキーに予約情報を検索
         val bookingDetailInfo = TaxiStub().getTaxiBookingInfo(bookingId.text.toString())
 
+        //予約情報を得られた場合、画面の各項目に値を設定
         if (bookingDetailInfo != null) {
             val df = SimpleDateFormat("yyyy/MM/dd")
             val tf = SimpleDateFormat("hh:mm")
@@ -37,18 +40,31 @@ class MyTaxiDetailActivity : AppCompatActivity() {
             carNumber.text = bookingDetailInfo.carNumber
             companyPhoneNumber.text = bookingDetailInfo.companyPhoneNumber
             taxiNotice.text = bookingDetailInfo.taxiNotice
+        } else {
+            //TODO 予約情報の取得に失敗した場合の処理
         }
 
-        changeButton.setOnClickListener{
+        //変更ボタン押下時の動作
+        changeButton.setOnClickListener {
             //TODO 予約変更画面作成後に更新
         }
 
+        //取消ボタン押下時の動作
         cancelButton.setOnClickListener {
-            if(TaxiStub().CancelBookingAction(bookingId.text.toString())){
-                startActivity<MyTaxiCancelCompActivity>()
-            }
-            else{
-                //TODO 予約取り消しに失敗した場合のエラー表示
+            AlertDialog.Builder(this, R.style.Base_Theme_AppCompat_Dialog_Alert).apply {
+                setTitle("予約取消確認")
+                setMessage("タクシー予約を取り消します。")
+
+                setPositiveButton("はい") { _, _ ->
+                    if (TaxiStub().CancelBookingAction(bookingId.text.toString())) {
+                        startActivity<MyTaxiCancelCompActivity>()
+                    } else {
+                        //TODO 予約取り消しに失敗した場合のエラー表示
+                    }
+                }
+
+                setNegativeButton("いいえ", null)
+                show()
             }
         }
     }
