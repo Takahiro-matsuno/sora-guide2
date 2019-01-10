@@ -6,26 +6,30 @@
                                              android:layout_height="match_parent">
 
     <TextView
-            android:text="予約内容詳細"
+            android:text="@string/myTaxiDetail"
             android:background="#00FF00"
             android:layout_width="0dp"
             android:layout_height="41dp" app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/textView3"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" android:gravity="center"
-            android:textSize="@dimen/text_size" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/titleTextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:gravity="center"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
     <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/scrollView3" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout2" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintVertical_bias="0.0">
 
         <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
 
             <TableRow
@@ -35,12 +39,13 @@
                         android:text="@string/bookingId"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView29"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/bookingId"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bookingId"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -50,12 +55,13 @@
                         android:text="@string/rideOnDay"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView28"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/day"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/day"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -65,12 +71,13 @@
                         android:text="@string/rideOnTime"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView30"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/time"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/time"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -80,12 +87,13 @@
                         android:text="@string/numberOfPeople_ADLT"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView33"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/adlt"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/adlt"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -95,12 +103,13 @@
                         android:text="@string/numberOfPeople_CHLD"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView34"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/chld"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/chld"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -110,12 +119,13 @@
                         android:text="@string/dispatchNumber"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView27"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/disp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/disp"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -125,12 +135,13 @@
                         android:text="@string/taxiCompany"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView25"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/taxi"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/taxi"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -140,12 +151,13 @@
                         android:text="@string/destination"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView23"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/dest"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dest"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
             <TableRow
@@ -155,105 +167,135 @@
                         android:text="@string/fullName"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView20"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/name"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/name"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
                 <TextView
                         android:text="@string/furigana"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView12"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/kana"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/kana"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
                 <TextView
                         android:text="@string/phoneNumber"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView14"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/phone"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/phone"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
                 <TextView
                         android:text="@string/emailAddress"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView16"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/mail"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mail"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
                 <TextView
                         android:text="@string/comments"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView18"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/comment"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/comment"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
                 <TextView
                         android:text="@string/carNumber"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView19"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/carNumber"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/carNumber"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
                 <TextView
                         android:text="@string/companyPhoneNumber"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView35"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/companyPhoneNumber"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/companyPhoneNumber"
                         android:textSize="@dimen/text_size"/>
             </TableRow>
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
                 <TextView
                         android:text="@string/taxiNotice"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/textView36"
+                        android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content" android:id="@+id/taxiNotice"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/taxiNotice"
                         android:textSize="@dimen/text_size"
-                        android:inputType="textMultiLine" tools:ignore="TextViewEdits"/>
+                        android:inputType="textMultiLine"
+                        tools:ignore="TextViewEdits"/>
             </TableRow>
         </TableLayout>
     </ScrollView>
@@ -263,16 +305,21 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/linearLayout2">
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/linearLayout2">
         <Button
                 android:text="@string/changeButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/changeButton" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/changeButton"
+                android:layout_weight="1"
                 android:textSize="@dimen/text_size"/>
         <Button
                 android:text="@string/cancelButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/cancelButton" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancelButton"
+                android:layout_weight="1"
                 android:textSize="@dimen/text_size"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

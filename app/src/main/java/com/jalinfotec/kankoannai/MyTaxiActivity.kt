@@ -1,5 +1,6 @@
 package com.jalinfotec.kankoannai
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import org.jetbrains.anko.startActivity
@@ -32,14 +33,14 @@ class MyTaxiActivity : AppCompatActivity() {
         tabLayout.getTabAt(1)!!.select()
 
         //予約リストの読み込み
-        var bookingInfo: String? = TaxiStub().getTaxiBookingInfo(true)
-        var bookingList: List<TaxiBookingInformation>
+        val bookingInfo: String? = TaxiStub().getTaxiBookingInfo(true)
+        val bookingList: List<TaxiBookingInformation>
 
         //予約リストをTaxiBookingInformationに型変換
         bookingList =
                 try {
                     val type = object : TypeToken<List<TaxiBookingInformation>>() {}.type
-                    var gSon = GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create()
+                    val gSon = GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create()
                     //gSon =  GsonBuilder().setDateFormat("HH:mm:ss")
                     //val gSon =  GsonBuilder().setDateFormat("yyyy-MM-dd","HH:mm:ss").create()
                     gSon.fromJson<List<TaxiBookingInformation>>(bookingInfo, type)
@@ -55,10 +56,10 @@ class MyTaxiActivity : AppCompatActivity() {
         listView.adapter = adapter
 
         //リストのタップイベント
-        listView.setOnItemClickListener { adapterView, view, position, id ->
+        listView.setOnItemClickListener { _, _, position, _ ->
             val bookingId = bookingList[position].bookingId
             //Toast.makeText(this,"$bookingId",Toast.LENGTH_SHORT)
-            var intent = Intent(this, MyTaxiDetailActivity::class.java)
+            val intent = Intent(this, MyTaxiDetailActivity::class.java)
             intent.putExtra("ID",bookingId)
             startActivity(intent)
             this.finish()
@@ -97,10 +98,11 @@ class MyTaxiActivity : AppCompatActivity() {
         finish()
     }
 
-    class MyTaxiListAdapter(context: Context, val myTaxiList: List<TaxiBookingInformation>) :
+    class MyTaxiListAdapter(context: Context, private val myTaxiList: List<TaxiBookingInformation>) :
         ArrayAdapter<TaxiBookingInformation>(context, 0, myTaxiList) {
         private val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
+        @SuppressLint("SimpleDateFormat", "SetTextI18n")
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             val view = convertView ?: layoutInflater.inflate(R.layout.my_taxi_list_item, parent, false)
             val df = SimpleDateFormat("yyyy/MM/dd")

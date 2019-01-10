@@ -44,6 +44,7 @@
     <string name="sendButton">送信</string>
 
     //予約内容詳細画面
+    <string name="myTaxiDetail">予約内容詳細</string>
     <string name="changeButton">変更する</string>
     <string name="cancelButton">取り消す</string>
 

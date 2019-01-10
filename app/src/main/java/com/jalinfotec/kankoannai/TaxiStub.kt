@@ -3,10 +3,8 @@ package com.jalinfotec.kankoannai
 import android.annotation.SuppressLint
 import android.util.Log
 import com.google.gson.Gson
-import com.jalinfotec.kankoannai.R.string.bookingId
 import java.lang.Exception
 import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 class TaxiStub {
@@ -151,7 +149,8 @@ class TaxiStub {
         return null
     }
 
-    fun CancelBookingAction(id: String):Boolean{
+    fun cancelBookingAction(id: String):Boolean{
+        Log.d("仮実装", "取消予約番号：$id")
         return true
     }
 }

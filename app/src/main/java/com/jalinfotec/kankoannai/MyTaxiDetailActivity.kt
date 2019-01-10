@@ -1,7 +1,9 @@
 package com.jalinfotec.kankoannai
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.os.Bundle
+import android.support.v4.app.DialogFragment
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_my_taxi_detail.*
@@ -10,7 +12,7 @@ import java.text.SimpleDateFormat
 
 class MyTaxiDetailActivity : AppCompatActivity() {
 
-    @SuppressLint("SimpleDateFormat")
+    @SuppressLint("SimpleDateFormat", "PrivateResource")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_taxi_detail)
@@ -51,21 +53,36 @@ class MyTaxiDetailActivity : AppCompatActivity() {
 
         //取消ボタン押下時の動作
         cancelButton.setOnClickListener {
+            /*
             AlertDialog.Builder(this, R.style.Base_Theme_AppCompat_Dialog_Alert).apply {
                 setTitle("予約取消確認")
                 setMessage("タクシー予約を取り消します。")
 
                 setPositiveButton("はい") { _, _ ->
-                    if (TaxiStub().CancelBookingAction(bookingId.text.toString())) {
+                    if (TaxiStub().cancelBookingAction(bookingId.text.toString())) {
                         startActivity<MyTaxiCancelCompActivity>()
                     } else {
                         //TODO 予約取り消しに失敗した場合のエラー表示
                     }
+                    setNegativeButton()
                 }
 
                 setNegativeButton("いいえ", null)
                 show()
+            }*/
+            val dialog = MyTaxiCancelDialogFragment()
+            dialog.title = "予約取消確認"
+            dialog.msg = "タクシー予約を取り消します。"
+            dialog.positiveText = "はい"
+            dialog.negativeText = "いいえ"
+            dialog.onPositiveClickListener = DialogInterface.OnClickListener { _, _ ->
+                if (TaxiStub().cancelBookingAction(bookingId.text.toString())) {
+                    startActivity<MyTaxiCancelCompActivity>()
+                } else {
+                    //TODO 予約取り消しに失敗した場合のエラー表示
+                }
             }
+            dialog.show(supportFragmentManager, "tag")
         }
     }
 
