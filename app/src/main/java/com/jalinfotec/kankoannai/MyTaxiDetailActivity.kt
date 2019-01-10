@@ -62,7 +62,7 @@ class MyTaxiDetailActivity : AppCompatActivity() {
                     if (TaxiStub().cancelBookingAction(bookingId.text.toString())) {
                         startActivity<MyTaxiCancelCompActivity>()
                     } else {
-                        //TODO 予約取り消しに失敗した場合のエラー表示
+                        //予約取り消しに失敗した場合のエラー表示
                     }
                     setNegativeButton()
                 }
