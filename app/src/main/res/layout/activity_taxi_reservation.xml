@@ -49,7 +49,8 @@
                           android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="197dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/rideOnDay"
                             android:textSize="@dimen/text_size"
@@ -57,7 +58,8 @@
                             android:focusable="auto" android:focusableInTouchMode="true"/>
                     <EditText
                             android:id="@+id/editDay"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="date"
@@ -68,14 +70,16 @@
                           android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/rideOnTime"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/time_edit"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="time"
@@ -86,14 +90,16 @@
                           android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/numberOfPeople_ADLT"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editNumberAdlt"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="number"
@@ -103,13 +109,15 @@
                           android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/numberOfPeople_CHLD"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:id="@+id/editNumberChld"
@@ -121,14 +129,16 @@
                         android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/dispatchNumber"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editDispatchNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:inputType="number"
                             android:ems="10"
@@ -139,14 +149,16 @@
                         android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/taxiCompany"
                             android:textSize="@dimen/text_size"
                     />
                     <Spinner
                             android:id="@+id/spinnerTaxi"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:entries="@array/taxiCompany"
                     />
@@ -157,13 +169,15 @@
                 >
                     <TextView
                             android:text="@string/destination"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editDest"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="text"
@@ -175,13 +189,15 @@
                 >
                     <TextView
                             android:text="@string/fullName"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editName"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
                             android:ems="10"
@@ -192,14 +208,16 @@
                         android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/furigana"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editFurigana"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
                             android:ems="10"
@@ -210,14 +228,16 @@
                         android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/phoneNumber"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editPhone"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="phone"
@@ -228,14 +248,16 @@
                         android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/emailAddress"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editMail"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="textEmailAddress"
@@ -246,14 +268,16 @@
                         android:layout_height="match_parent"
                 >
                     <TextView
-                            android:layout_width="180dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="@string/comments"
                             android:textSize="@dimen/text_size"
                     />
                     <EditText
                             android:id="@+id/editComments"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="text"
