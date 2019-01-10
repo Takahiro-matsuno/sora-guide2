@@ -8,6 +8,7 @@ import android.widget.DatePicker
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.support.design.widget.TabLayout
+import android.text.InputFilter
 import android.widget.NumberPicker
 import java.util.Calendar
 //import sun.util.locale.provider.LocaleProviderAdapter.getAdapter
@@ -89,16 +90,30 @@ class TaxiReservationActivity :
         })
 
         inputConfirmButton.setOnClickListener {
-            //予約内容確認画面へ遷移
-            startActivity<TaxiReservationCheckActivity>(
-                Pair("DAY",editDay.text.toString()),Pair("TIME",time_edit.text.toString()),
-                Pair("ADLT",editNumberAdlt.text.toString()),Pair("CHLD",editNumberChld.text.toString()),
-                Pair("DISP",editDispatchNumber.text.toString()),Pair("TAXI",spinnerTaxi.selectedItem.toString()),
-                Pair("DEST",editDest.text.toString()),Pair("NAME",editName.text.toString()),
-                Pair("KANA",editFurigana.text.toString()),Pair("PHONE",editPhone.text.toString()),
-                Pair("MAIL",editMail.text.toString()),Pair("COMMENT",editComments.text.toString())
-            )
-            this.finish()
+            //入力必須項目が入力済みの場合のみ次画面に遷移
+            if(editDay.text.isNotEmpty() &&
+                time_edit.text.isNotEmpty() &&
+                editNumberAdlt.text.isNotEmpty() &&
+                editNumberChld.text.isNotEmpty() &&
+                editDispatchNumber.text.isNotEmpty() &&
+                editDest.text.isNotEmpty() &&
+                editName.text.isNotEmpty() &&
+                editFurigana.text.isNotEmpty() &&
+                editPhone.text.isNotEmpty() &&
+                editMail.text.isNotEmpty())
+            {
+
+                //予約内容確認画面へ遷移
+                startActivity<TaxiReservationCheckActivity>(
+                    Pair("DAY", editDay.text.toString()), Pair("TIME", time_edit.text.toString()),
+                    Pair("ADLT", editNumberAdlt.text.toString()), Pair("CHLD", editNumberChld.text.toString()),
+                    Pair("DISP", editDispatchNumber.text.toString()), Pair("TAXI", spinnerTaxi.selectedItem.toString()),
+                    Pair("DEST", editDest.text.toString()), Pair("NAME", editName.text.toString()),
+                    Pair("KANA", editFurigana.text.toString()), Pair("PHONE", editPhone.text.toString()),
+                    Pair("MAIL", editMail.text.toString()), Pair("COMMENT", editComments.text.toString())
+                )
+                this.finish()
+            }
         }
 
         time_edit.setOnClickListener {
@@ -129,6 +144,16 @@ class TaxiReservationActivity :
             editComments.text.clear()
         }
 
+
+
+        val filter = InputFilter { source,start,end,dest,dstart,dend ->
+            if(source.toString().matches("^[1-9]$".toRegex())) {
+                source
+            } else {
+                ""
+            }
+        }
+        editNumberAdlt.filters = arrayOf(filter, InputFilter.LengthFilter(1))
 
         /*
         // TODO テスト用に一時作成 画面遷移が完了したら消す
