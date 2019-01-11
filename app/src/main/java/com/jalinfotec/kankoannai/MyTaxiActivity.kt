@@ -2,11 +2,9 @@ package com.jalinfotec.kankoannai
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
-import org.jetbrains.anko.startActivity
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +17,7 @@ import com.google.gson.reflect.TypeToken
 import com.jalinfotec.kankoannai.R.id.*
 import kotlinx.android.synthetic.main.activity_my_taxi.*
 import org.jetbrains.anko.find
+import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 
 class MyTaxiActivity : AppCompatActivity() {
@@ -57,11 +56,9 @@ class MyTaxiActivity : AppCompatActivity() {
 
         //リストのタップイベント
         listView.setOnItemClickListener { _, _, position, _ ->
-            val bookingId = bookingList[position].bookingId
-            //Toast.makeText(this,"$bookingId",Toast.LENGTH_SHORT)
-            val intent = Intent(this, MyTaxiDetailActivity::class.java)
-            intent.putExtra("ID",bookingId)
-            startActivity(intent)
+            startActivity<MyTaxiDetailActivity>(
+                Pair("ID", bookingList[position].bookingId)
+            )
             this.finish()
         }
 

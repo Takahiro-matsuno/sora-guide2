@@ -3,8 +3,6 @@ package com.jalinfotec.kankoannai
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_my_taxi_detail.*
 import org.jetbrains.anko.startActivity
@@ -48,28 +46,14 @@ class MyTaxiDetailActivity : AppCompatActivity() {
 
         //変更ボタン押下時の動作
         changeButton.setOnClickListener {
-            //TODO 予約変更画面作成後に更新
+            startActivity<MyTaxiChangeActivity>(
+                Pair("ID", bookingId.text)
+            )
+            this.finish()
         }
 
         //取消ボタン押下時の動作
         cancelButton.setOnClickListener {
-            /*
-            AlertDialog.Builder(this, R.style.Base_Theme_AppCompat_Dialog_Alert).apply {
-                setTitle("予約取消確認")
-                setMessage("タクシー予約を取り消します。")
-
-                setPositiveButton("はい") { _, _ ->
-                    if (TaxiStub().cancelBookingAction(bookingId.text.toString())) {
-                        startActivity<MyTaxiCancelCompActivity>()
-                    } else {
-                        //予約取り消しに失敗した場合のエラー表示
-                    }
-                    setNegativeButton()
-                }
-
-                setNegativeButton("いいえ", null)
-                show()
-            }*/
             val dialog = MyTaxiCancelDialogFragment()
             dialog.title = "予約取消確認"
             dialog.msg = "タクシー予約を取り消します。"
@@ -78,6 +62,7 @@ class MyTaxiDetailActivity : AppCompatActivity() {
             dialog.onPositiveClickListener = DialogInterface.OnClickListener { _, _ ->
                 if (TaxiStub().cancelBookingAction(bookingId.text.toString())) {
                     startActivity<MyTaxiCancelCompActivity>()
+                    finish()
                 } else {
                     //TODO 予約取り消しに失敗した場合のエラー表示
                 }
