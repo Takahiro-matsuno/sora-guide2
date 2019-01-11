@@ -271,6 +271,26 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:text="@string/emailCheck"
+                            android:textSize="18sp"
+                    />
+                    <EditText
+                            android:id="@+id/editMailCheck"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textEmailAddress"
+                    />
+                </TableRow>
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                >
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
                             android:text="@string/comments"
                             android:textSize="@dimen/text_size"
                     />

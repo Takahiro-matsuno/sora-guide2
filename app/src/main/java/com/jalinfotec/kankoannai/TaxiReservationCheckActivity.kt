@@ -32,17 +32,11 @@ class TaxiReservationCheckActivity : AppCompatActivity() {
         mail.text = intent.getStringExtra("MAIL")
         comment.text = intent.getStringExtra("COMMENT")
 
+        //"戻る"ボタン押下時予、約登録画面に遷移
         backButton.setOnClickListener {
-            startActivity<TaxiReservationActivity>(
-                Pair("DAY",day.text),Pair("TIME",time.text),
-                Pair("ADLT",adlt.text),Pair("CHLD",chld.text),
-                Pair("DISP",disp.text),Pair("TAXI",taxi.text),
-                Pair("DEST",dest.text),Pair("NAME",name.text),
-                Pair("KANA",kana.text),Pair("PHONE",phone.text),
-                Pair("MAIL",mail.text),Pair("COMMENT",comment.text)
-            )
-            this.finish()
+            pressBack()
         }
+
         // サーバに予約情報を送信する
         button4.setOnClickListener { postBookingInfo() }
 
@@ -113,4 +107,23 @@ class TaxiReservationCheckActivity : AppCompatActivity() {
                 else Toast.makeText(this, result, Toast.LENGTH_SHORT)
         toast!!.show()
     }
+
+    //"戻る"ボタン、デフォルトバックボタン押下時の共通処理
+    private fun pressBack() {
+        //予約登録画面に遷移
+        startActivity<TaxiReservationActivity>(
+            Pair("DAY",day.text),Pair("TIME",time.text),
+            Pair("ADLT",adlt.text),Pair("CHLD",chld.text),
+            Pair("DISP",disp.text),Pair("TAXI",taxi.text),
+            Pair("DEST",dest.text),Pair("NAME",name.text),
+            Pair("KANA",kana.text),Pair("PHONE",phone.text),
+            Pair("MAIL",mail.text),Pair("COMMENT",comment.text)
+        )
+        this.finish()
+    }
+    //デフォルトバックボタン押下時、予約登録画面に遷移
+    override fun onBackPressed() {
+        pressBack()
+    }
+
 }

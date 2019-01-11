@@ -50,6 +50,7 @@ class TaxiReservationActivity :
         editFurigana.setText(intent.getStringExtra("KANA"))
         editPhone.setText(intent.getStringExtra("PHONE"))
         editMail.setText(intent.getStringExtra("MAIL"))
+        editMailCheck.setText(intent.getStringExtra("MAIL"))
         editComments.setText(intent.getStringExtra("COMMENT"))
 
 
@@ -98,25 +99,33 @@ class TaxiReservationActivity :
                 editName.text.isNotEmpty() &&
                 editFurigana.text.isNotEmpty() &&
                 editPhone.text.isNotEmpty() &&
-                editMail.text.isNotEmpty()
+                editMail.text.isNotEmpty() &&
+                editMailCheck.text.isNotEmpty()
             ) {
+                //予約人数チェック
                 if (editNumberAdlt.text.toString().toInt() + editNumberChld.text.toString().toInt() > 0) {
-                    //予約内容確認画面へ遷移
-                    startActivity<TaxiReservationCheckActivity>(
-                        Pair("DAY", editDay.text.toString()),
-                        Pair("TIME", time_edit.text.toString()),
-                        Pair("ADLT", editNumberAdlt.text.toString()),
-                        Pair("CHLD", editNumberChld.text.toString()),
-                        Pair("DISP", editDispatchNumber.text.toString()),
-                        Pair("TAXI", spinnerTaxi.selectedItem.toString()),
-                        Pair("DEST", editDest.text.toString()),
-                        Pair("NAME", editName.text.toString()),
-                        Pair("KANA", editFurigana.text.toString()),
-                        Pair("PHONE", editPhone.text.toString()),
-                        Pair("MAIL", editMail.text.toString()),
-                        Pair("COMMENT", editComments.text.toString())
-                    )
-                    this.finish()
+                    //"メールアドレス"と"メールアドレス(確認)"が同じか
+                    if(editMail.text.toString().equals(editMailCheck.text.toString())) {
+                        //予約内容確認画面へ遷移
+                        startActivity<TaxiReservationCheckActivity>(
+                            Pair("DAY", editDay.text.toString()),
+                            Pair("TIME", time_edit.text.toString()),
+                            Pair("ADLT", editNumberAdlt.text.toString()),
+                            Pair("CHLD", editNumberChld.text.toString()),
+                            Pair("DISP", editDispatchNumber.text.toString()),
+                            Pair("TAXI", spinnerTaxi.selectedItem.toString()),
+                            Pair("DEST", editDest.text.toString()),
+                            Pair("NAME", editName.text.toString()),
+                            Pair("KANA", editFurigana.text.toString()),
+                            Pair("PHONE", editPhone.text.toString()),
+                            Pair("MAIL", editMail.text.toString()),
+                            Pair("COMMENT", editComments.text.toString())
+                        )
+                        this.finish()
+                    }
+                    else {
+                        Toast.makeText(this, "メールアドレスを確認してください", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
                     Toast.makeText(this, "予約人数を1名以上にしてください", Toast.LENGTH_SHORT).show()
                 }
@@ -149,6 +158,7 @@ class TaxiReservationActivity :
             editFurigana.text.clear()
             editPhone.text.clear()
             editMail.text.clear()
+            editMailCheck.text.clear()
             editComments.text.clear()
         }
 

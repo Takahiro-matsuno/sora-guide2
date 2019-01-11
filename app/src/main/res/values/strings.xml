@@ -25,7 +25,7 @@
     <string name="furigana">フリガナ</string>
     <string name="phoneNumber">電話番号</string>
     <string name="emailAddress">メールアドレス</string>
-    <string name="comments">コメント</string>
+    <string name="comments">コメント(任意)</string>
     <string name="carNumber">車両番号</string>
     <string name="companyPhoneNumber">連絡先</string>
     <string name="taxiNotice">ご連絡事項</string>
@@ -47,5 +47,6 @@
     <string name="myTaxiDetail">予約内容詳細</string>
     <string name="changeButton">変更する</string>
     <string name="cancelButton">取り消す</string>
+    <string name="emailCheck">メールアドレス(確認)</string>
 
 </resources>
