@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.InputFilter
 import android.widget.Spinner
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_taxi_reservation.*
+import kotlinx.android.synthetic.main.activity_my_taxi_change.*
 import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 import java.util.*
