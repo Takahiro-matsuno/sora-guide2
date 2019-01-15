@@ -22,6 +22,7 @@ class MyTaxiChangeActivity :
     private val maxHour = 23
     private var hour = 12
     private var minute = 0
+    private var bookingId: String = ""
 
     @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +32,7 @@ class MyTaxiChangeActivity :
         // アニメーションを無効化する（？）
         overridePendingTransition(0, 0)
 
-        val bookingId = intent.getStringExtra("ID")!!
+        bookingId = intent.getStringExtra("ID")!!
 
         //予約番号をキーに予約情報を検索
         val bookingDetailInfo = TaxiStub().getTaxiBookingInfo(bookingId)
@@ -117,7 +118,6 @@ class MyTaxiChangeActivity :
             this.finish()
         }
 
-
         val taxiNumFilter = InputFilter { source, start, end, dest, dstart, dend ->
             if (source.toString().matches("^[1-9]$".toRegex())) {
                 source
@@ -135,6 +135,15 @@ class MyTaxiChangeActivity :
         editNumberAdlt.filters = arrayOf(numFilter, InputFilter.LengthFilter(1))
         editNumberChld.filters = arrayOf(numFilter, InputFilter.LengthFilter(1))
         editDispatchNumber.filters = arrayOf(taxiNumFilter, InputFilter.LengthFilter(1))
+    }
+
+    //Android戻るボタン制御
+    override fun onBackPressed() {
+        //予約詳細画面へ遷移
+        startActivity<MyTaxiDetailActivity>(
+            Pair("ID", bookingId)
+        )
+        finish()
     }
 
     /**
