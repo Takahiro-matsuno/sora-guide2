@@ -28,6 +28,18 @@
         </activity>
         <activity android:name=".AirportGuideActivity">
         </activity>
+        <activity android:name=".AirportGuideDetailActivity">
+        </activity>
+        <activity android:name=".AirportGuideArActivity">
+        </activity>
+        <activity android:name=".FlightInfoListActivity">
+        </activity>
+        <activity android:name=".FlightInfoDetailActivity">
+        </activity>
+        <activity android:name=".MyFlightRegistrationActivity">
+        </activity>
+        <activity android:name=".MyFlightCheckActivity">
+        </activity>
     </application>
 
 </manifest>
