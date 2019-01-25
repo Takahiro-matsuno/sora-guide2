@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.widget.Button
+import com.jalinfotec.kankoannai.R
 import org.jetbrains.anko.startActivity
 
 class TopMenuActivity : AppCompatActivity() {
@@ -34,10 +35,7 @@ class TopMenuActivity : AppCompatActivity() {
         }
 
         //観光案内画面へ遷移
-        val toSightseeingButton = findViewById<Button>(R.id.sightseeing)
-        toSightseeingButton.setOnClickListener{
-            startActivity<TouristInfoSerchActivity>()
-        }
+
 
         val affiliateButton = findViewById<Button>(R.id.affiliate)
         affiliateButton.setOnClickListener {
