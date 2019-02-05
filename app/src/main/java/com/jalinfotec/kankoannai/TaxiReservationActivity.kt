@@ -18,11 +18,11 @@ class TaxiReservationActivity : AppCompatActivity() {
         // テスト
         val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
         // 登録画面
-        //val url = ""
+        //val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/app/registration"
         // TODO その他適宜追加
         //val url = ""
 
-        webView = find(R.id.webview)
+        webView = find(R.id.webView)
         webView.webViewClient = WebViewClient()
         webView.loadUrl(url)
     }
