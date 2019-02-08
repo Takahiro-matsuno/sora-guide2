@@ -22,7 +22,7 @@ class TaxiReservationActivity : AppCompatActivity() {
         // TODO その他適宜追加
         //val url = ""
 
-        webView = find(R.id.webview)
+        webView = find(R.id.webView)
         webView.webViewClient = WebViewClient()
         webView.loadUrl(url)
     }
