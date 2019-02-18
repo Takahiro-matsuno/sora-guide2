@@ -1,10 +1,9 @@
 package com.jalinfotec.kankoannai
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.webkit.CookieManager
 import android.webkit.CookieSyncManager
