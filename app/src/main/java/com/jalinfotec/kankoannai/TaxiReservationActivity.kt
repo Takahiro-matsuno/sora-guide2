@@ -33,9 +33,11 @@ class TaxiReservationActivity : AppCompatActivity() {
         //Cookie有効化
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             CookieSyncManager.createInstance(applicationContext)
+            CookieSyncManager.getInstance().startSync()
         }
         cookieManager = CookieManager.getInstance()
         cookieManager.setAcceptCookie(true)
+
 
         //WebView設定
         webView = find(R.id.webView)
@@ -65,6 +67,7 @@ class TaxiReservationActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             cookieManager.flush()
         } else {
+            CookieSyncManager.getInstance().sync()
             CookieSyncManager.getInstance().stopSync()
         }
     }
@@ -76,6 +79,7 @@ class TaxiReservationActivity : AppCompatActivity() {
             cookieManager.flush()
         } else {
             CookieSyncManager.getInstance().startSync()
+            CookieSyncManager.getInstance().sync()
         }
     }
 
