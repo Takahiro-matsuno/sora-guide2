@@ -5,11 +5,9 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-import android.webkit.CookieManager
-import android.webkit.CookieSyncManager
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.webkit.*
 import org.jetbrains.anko.find
+
 
 class TaxiReservationActivity : AppCompatActivity() {
 
@@ -41,8 +39,9 @@ class TaxiReservationActivity : AppCompatActivity() {
 
         //WebView設定
         webView = find(R.id.webView)
-        webView.webViewClient = WebViewClient()
         webView.settings.javaScriptEnabled = true
+        webView.webViewClient = WebViewClient()
+        webView.webChromeClient = WebChromeClient()
 
         //UserAgent設定
         val userAgent = webView.settings.userAgentString
