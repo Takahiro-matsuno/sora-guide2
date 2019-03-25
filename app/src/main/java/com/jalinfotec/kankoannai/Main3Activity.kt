@@ -3,13 +3,19 @@ package com.jalinfotec.kankoannai
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
+import android.support.design.widget.NavigationView
+import android.support.v4.view.GravityCompat
+import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
 import android.webkit.*
+import kotlinx.android.synthetic.main.activity_main3.*
+import kotlinx.android.synthetic.main.app_bar_main3.*
 import org.jetbrains.anko.find
 
-
-class TaxiReservationActivity : AppCompatActivity() {
+class Main3Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var webView: WebView
     private lateinit var cookieManager: CookieManager
@@ -17,14 +23,23 @@ class TaxiReservationActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_taxi_reservation)
+        setContentView(R.layout.activity_main3)
+        setSupportActionBar(toolbar)
+
+        val toggle = ActionBarDrawerToggle(
+                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        nav_view.setNavigationItemSelectedListener(this)
+
 
         // テスト
-        //val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
+        val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
         // 登録画面
         //val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/app/registration"
         // localhostで実行しているWebアプリケーション(テスト用)
-        val url = "http://10.0.2.2:8080"
+        //val url = "http://10.0.2.2:8080"
 
         //Cookie有効化
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
@@ -33,7 +48,6 @@ class TaxiReservationActivity : AppCompatActivity() {
         }
         cookieManager = CookieManager.getInstance()
         cookieManager.setAcceptCookie(true)
-
 
         //WebView設定
         webView = find(R.id.webView)
@@ -80,4 +94,54 @@ class TaxiReservationActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main3, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        when (item.itemId) {
+            R.id.action_settings -> return true
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        when (item.itemId) {
+            R.id.nav_camera -> {
+                // Handle the camera action
+            }
+            R.id.nav_gallery -> {
+
+            }
+            R.id.nav_slideshow -> {
+
+            }
+            R.id.nav_manage -> {
+
+            }
+            R.id.nav_share -> {
+
+            }
+            R.id.nav_send -> {
+
+            }
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+    }
 }

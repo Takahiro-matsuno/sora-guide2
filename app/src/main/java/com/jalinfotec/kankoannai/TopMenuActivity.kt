@@ -1,9 +1,8 @@
 package com.jalinfotec.kankoannai
 
-import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import org.jetbrains.anko.startActivity
 
@@ -31,7 +30,7 @@ class TopMenuActivity : AppCompatActivity() {
         val toTaxiButton = findViewById<Button>(R.id.taxi)
         toTaxiButton.setOnClickListener{
 
-            startActivity<TaxiReservationActivity>()
+            startActivity<Main3Activity>()
         }
 
         //観光案内画面へ遷移

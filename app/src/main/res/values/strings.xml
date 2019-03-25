@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Soragouide</string>
+    <string name="app_name">SoraGuide</string>
     <string name="text_select_label">表示するエリアの選択</string>
     <string name="chooseButtun">選択した県で表示</string>
     <string name="allButtun">一覧表示</string>
@@ -7,4 +7,11 @@
     <string name="sightseeingButton">観光案内</string>
     <string name="flightButton">フライト情報</string>
     <string name="taxiButton">タクシー予約</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>
