@@ -14,8 +14,9 @@ import android.webkit.*
 import kotlinx.android.synthetic.main.activity_main3.*
 import kotlinx.android.synthetic.main.app_bar_main3.*
 import org.jetbrains.anko.find
+import org.jetbrains.anko.startActivity
 
-class Main3Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class TaxiReservationActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var webView: WebView
     private lateinit var cookieManager: CookieManager
@@ -32,7 +33,6 @@ class Main3Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
-
 
         // テスト
         val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
@@ -102,36 +102,47 @@ class Main3Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         }
     }
 
+    /**
+     * ヘッダ右のボタン押下時の処理
+     */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main3, menu)
         return true
     }
 
+    /**
+     * ヘッダ右のボタン内メニュー押下時の処理
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
             R.id.action_settings -> return true
             else -> return super.onOptionsItemSelected(item)
         }
     }
 
+    /**
+     * ドロワーメニュー内の項目選択時の処理
+     */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
+            R.id.nav_top -> {
+                finish()
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_airport -> {
+                startActivity<AirportGuideActivity>()
+                finish()
             }
-            R.id.nav_slideshow -> {
-
+            R.id.nav_flight -> {
+                startActivity<AirportGuideActivity>()
+                finish()
             }
-            R.id.nav_manage -> {
-
+            R.id.nav_tourism -> {
+                startActivity<KankoMainActivity1>()
+                finish()
+            }
+            R.id.nav_taxi -> {
+                val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
+                webView.loadUrl(url)
             }
             R.id.nav_share -> {
 

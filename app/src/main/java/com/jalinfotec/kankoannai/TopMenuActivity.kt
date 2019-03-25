@@ -30,7 +30,7 @@ class TopMenuActivity : AppCompatActivity() {
         val toTaxiButton = findViewById<Button>(R.id.taxi)
         toTaxiButton.setOnClickListener{
 
-            startActivity<Main3Activity>()
+            startActivity<TaxiReservationActivity2>()
         }
 
         //観光案内画面へ遷移

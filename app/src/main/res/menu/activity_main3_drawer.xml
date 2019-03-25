@@ -5,32 +5,39 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_top"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="アプリトップへ" />
     </group>
 
-    <item android:title="Communicate">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_airport"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="空港案内" />
+        <item
+            android:id="@+id/nav_flight"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="フライト情報" />
+        <item
+            android:id="@+id/nav_tourism"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="観光案内" />
+        <item
+            android:id="@+id/nav_taxi"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="タクシー予約" />
+    </group>
+
+    <item android:title="共有">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_menu_camera"
                 android:title="Share" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_menu_camera"
                 android:title="Send" />
         </menu>
     </item>
