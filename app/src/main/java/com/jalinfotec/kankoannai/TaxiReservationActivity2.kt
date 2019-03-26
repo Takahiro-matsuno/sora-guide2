@@ -11,8 +11,8 @@ import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.*
-import kotlinx.android.synthetic.main.activity_main3.*
-import kotlinx.android.synthetic.main.app_bar_main3.*
+import kotlinx.android.synthetic.main.activity_taxi_reservation2.*
+import kotlinx.android.synthetic.main.app_bar_taxi.*
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
 
@@ -24,7 +24,7 @@ class TaxiReservationActivity2 : AppCompatActivity(), NavigationView.OnNavigatio
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main3)
+        setContentView(R.layout.activity_taxi_reservation2)
         setSupportActionBar(toolbar)
 
         val toggle = ActionBarDrawerToggle(
@@ -106,7 +106,7 @@ class TaxiReservationActivity2 : AppCompatActivity(), NavigationView.OnNavigatio
      * ヘッダ右のボタン押下時の処理
      */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main3, menu)
+        menuInflater.inflate(R.menu.activity_menu, menu)
         return true
     }
 
