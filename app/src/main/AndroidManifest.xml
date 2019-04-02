@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.jalinfotec.kankoannai">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+          package="com.jalinfotec.soraguide">
 
-    //androidでインターネット接続するために必要なpermission
+    <!--androidでインターネット接続するために必要なpermission-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
+            tools:ignore="GoogleAppIndexingWarning"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity
-                android:name=".KankoMainActivity1"
-                android:label="@string/app_name">
-
-        </activity>
+        <!--最初に呼び出されるアクティビティ：TOPメニュー画面-->
         <activity android:name=".TopMenuActivity">
 
             <intent-filter>
@@ -26,20 +23,24 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".AirportGuideActivity">
-        </activity>
-        <activity android:name=".AirportGuideDetailActivity">
-        </activity>
-        <activity android:name=".AirportGuideArActivity">
-        </activity>
-        <activity android:name=".FlightInfoListActivity">
-        </activity>
-        <activity android:name=".FlightInfoDetailActivity">
-        </activity>
-        <activity android:name=".MyFlightRegistrationActivity">
-        </activity>
-        <activity android:name=".MyFlightCheckActivity">
-        </activity>
+
+        <!--各アクティビティの追加↓↓-->
+
+        <!--<activity android:name=".AirportGuideActivity">-->
+        <!--</activity>-->
+        <!--<activity android:name=".AirportGuideDetailActivity">-->
+        <!--</activity>-->
+        <!--<activity android:name=".AirportGuideArActivity">-->
+        <!--</activity>-->
+        <!--<activity android:name=".FlightInfoListActivity">-->
+        <!--</activity>-->
+        <!--<activity android:name=".FlightInfoDetailActivity">-->
+        <!--</activity>-->
+        <!--<activity android:name=".MyFlightRegistrationActivity">-->
+        <!--</activity>-->
+        <!--<activity android:name=".MyFlightCheckActivity">-->
+        <!--</activity>-->
+
     </application>
 
 </manifest>

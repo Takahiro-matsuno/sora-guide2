@@ -4,7 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.widget.Button
-import com.jalinfotec.kankoannai.R
+import android.widget.ImageButton
+import com.jalinfotec.soraguide.R
 import org.jetbrains.anko.startActivity
 
 class TopMenuActivity : AppCompatActivity() {
@@ -14,29 +15,35 @@ class TopMenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_top_menu)
 
         //空港案内画面へ遷移
-        val toAirportButton = findViewById<Button>(R.id.airport)
+        val toAirportButton = findViewById<ImageButton>(R.id.airport)
         toAirportButton.setOnClickListener{
 
-            startActivity<AirportGuideActivity>()
+            //startActivity<AirportGuideActivity>()
         }
 
         //フライト情報画面へ遷移
-        val toFlightInfoButton = findViewById<Button>(R.id.flightinfo)
+        val toFlightInfoButton = findViewById<ImageButton>(R.id.flight)
         toFlightInfoButton.setOnClickListener{
 
-            startActivity<AirportGuideActivity>()
+           //startActivity<AirportGuideActivity>()
         }
 
         //タクシー予約画面へ遷移
-        val toTaxyButton = findViewById<Button>(R.id.taxi)
+        val toTaxyButton = findViewById<ImageButton>(R.id.taxi)
         toTaxyButton.setOnClickListener{
 
-            startActivity<AirportGuideActivity>()
+            //startActivity<AirportGuideActivity>()
         }
 
         //観光案内画面へ遷移
+        val toSightseeingButton = findViewById<ImageButton>(R.id.sightseeing)
+        toSightseeingButton.setOnClickListener{
+
+           // startActivity<AirportGuideActivity>()
+        }
 
 
+        //要修正：アフィリエイトリンクエリアの動作
         val affiliateButton = findViewById<Button>(R.id.affiliate)
         affiliateButton.setOnClickListener {
 

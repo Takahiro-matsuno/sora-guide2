@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Soragouide</string>
+    <string name="app_name">Soraguide</string>
     <string name="text_select_label">キーワード</string>
     <string name="text_select_label2">検索キーワード</string>
     <string name="text_hint">検索キーワードを入力</string>
@@ -9,6 +9,4 @@
     <string name="sightseeingButton">観光案内</string>
     <string name="flightButton">フライト情報</string>
     <string name="taxiButton">タクシー予約</string>
-
-
 </resources>
