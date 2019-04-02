@@ -5,61 +5,74 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".TopMenuActivity">
-
+        tools:context=".TopMenuActivity" tools:layout_editor_absoluteY="81dp">
 
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="200dp" app:srcCompat="@drawable/topimage" android:id="@+id/newsImage"
             android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
 
-
-    <Button
-            android:text="広告エリア"
+    <ImageSwitcher
             android:layout_width="match_parent"
-            android:layout_height="71dp" android:id="@+id/affiliate"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/newsImage" app:layout_constraintVertical_bias="1.0"/>
+            android:layout_height="200dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@android:color/background_dark" android:id="@+id/imageSwitcher">
+
+    </ImageSwitcher>
     <ImageButton
             android:layout_width="185dp"
             android:layout_height="120dp" app:srcCompat="@drawable/ic_local_airport_black_24dp"
             android:id="@+id/airport"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newsImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/affiliate" app:layout_constraintVertical_bias="0.00999999"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/newsImage" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintHorizontal_bias="0.0"/>
     <ImageButton
             android:layout_width="185dp"
             android:layout_height="120dp" app:srcCompat="@drawable/ic_local_taxi_black_24dp"
             android:id="@+id/taxi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newsImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/affiliate" app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintTop_toBottomOf="@+id/airport" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"/>
     <ImageButton
             android:layout_width="185dp"
             android:layout_height="120dp" app:srcCompat="@drawable/ic_flight_takeoff_black_24dp"
             android:id="@+id/flight"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newsImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/affiliate" app:layout_constraintVertical_bias="0.008"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/newsImage" app:layout_constraintVertical_bias="0.0"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginEnd="8dp"/>
     <ImageButton
-            android:layout_width="185dp"
+            android:layout_width="181dp"
             android:layout_height="120dp" app:srcCompat="@drawable/ic_pin_drop_black_24dp"
             android:id="@+id/sightseeing"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newsImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/affiliate" app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintTop_toBottomOf="@+id/flight" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.989"
+            app:layout_constraintVertical_bias="0.0"/>
+    <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/taxi" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+    </com.google.android.gms.ads.AdView>
 
 </android.support.constraint.ConstraintLayout>
