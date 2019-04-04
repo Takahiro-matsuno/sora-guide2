@@ -1,11 +1,13 @@
 package com.jalinfotec.soraguide
 
+
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AlertDialog
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageSwitcher
 import android.widget.ImageView
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
@@ -20,6 +22,7 @@ class TopMenuActivity : AppCompatActivity() {
     //Admob用
     lateinit var mAdView : AdView
 
+    //**画像用のパーツ**
     //TOP画面表示画像のリスト作成→ここはDBから呼べるようにする？
     private val resource = listOf(
         R.drawable.topimage , R.drawable.floormap
@@ -27,7 +30,6 @@ class TopMenuActivity : AppCompatActivity() {
 
     //どの画像を表示しているかを保持する変数
     private var position = 0
-
 
     //画像スライドショー初期設定
     private var isSlideshow = true
@@ -104,6 +106,7 @@ class TopMenuActivity : AppCompatActivity() {
 //                .setPositiveButton("OK"){dialog,which ->}.show()
 //        }
 
+        //val newsImage = findViewById<ImageSwitcher>(R.id.imageSwitcher)
 
 
     }
