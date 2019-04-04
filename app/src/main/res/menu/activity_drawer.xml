@@ -2,22 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_top"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="アプリトップへ" />
-    </group>
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_airport"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_info_outline_black_24dp"
             android:title="空港案内" />
         <item
             android:id="@+id/nav_flight"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_local_airport_black_24dp"
             android:title="フライト情報" />
         <item
             android:id="@+id/nav_tourism"
@@ -25,21 +17,7 @@
             android:title="観光案内" />
         <item
             android:id="@+id/nav_taxi"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_local_taxi_black_24dp"
             android:title="タクシー予約" />
     </group>
-
-    <item android:title="共有">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Send" />
-        </menu>
-    </item>
-
 </menu>

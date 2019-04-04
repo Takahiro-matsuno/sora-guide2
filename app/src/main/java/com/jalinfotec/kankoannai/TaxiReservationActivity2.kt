@@ -35,9 +35,9 @@ class TaxiReservationActivity2 : AppCompatActivity(), NavigationView.OnNavigatio
         nav_view.setNavigationItemSelectedListener(this)
 
         // テスト
-        val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
+        //val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
         // 登録画面
-        //val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/app/registration"
+        val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/app/registration"
         // localhostで実行しているWebアプリケーション(テスト用)
         //val url = "http://10.0.2.2:8080"
 
@@ -103,31 +103,10 @@ class TaxiReservationActivity2 : AppCompatActivity(), NavigationView.OnNavigatio
     }
 
     /**
-     * ヘッダ右のボタン押下時の処理
-     */
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.activity_menu, menu)
-        return true
-    }
-
-    /**
-     * ヘッダ右のボタン内メニュー押下時の処理
-     */
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }
-
-    /**
      * ドロワーメニュー内の項目選択時の処理
      */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_top -> {
-                finish()
-            }
             R.id.nav_airport -> {
                 startActivity<AirportGuideActivity>()
                 finish()
@@ -143,12 +122,6 @@ class TaxiReservationActivity2 : AppCompatActivity(), NavigationView.OnNavigatio
             R.id.nav_taxi -> {
                 val url = "https://taxiapptest.azurewebsites.net/taxiReservation-0.1.2/"
                 webView.loadUrl(url)
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
             }
         }
 
