@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AlertDialog
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageSwitcher
@@ -61,6 +62,7 @@ class TopMenuActivity : AppCompatActivity() {
         timer(period = 5000){
             handler.post {
                 if(isSlideshow){
+
                     movePosition(1)
                 }
             }
@@ -120,6 +122,10 @@ class TopMenuActivity : AppCompatActivity() {
         }else if(position < 0){
             position = resource.size - 1
         }
+        //画像スライドのアニメーション設定
+        imageSwitcher.setInAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in))
+        imageSwitcher.setOutAnimation( AnimationUtils.loadAnimation(this,android.R.anim.fade_out))
+        //画像ポジションの変更
         imageSwitcher.setImageResource(resource[position])
     }
 }
