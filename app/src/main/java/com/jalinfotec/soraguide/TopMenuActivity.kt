@@ -1,21 +1,21 @@
 package com.jalinfotec.soraguide
 
 
+import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.app.AlertDialog
+import android.util.Log
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageSwitcher
 import android.widget.ImageView
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.activity_top_menu.*
-import com.jalinfotec.soraguide.R
-import org.jetbrains.anko.startActivity
+import kotlinx.android.synthetic.main.activity_top_menu.view.*
 import kotlin.concurrent.timer
 
 class TopMenuActivity : AppCompatActivity() {
@@ -26,8 +26,21 @@ class TopMenuActivity : AppCompatActivity() {
     //**画像用のパーツ**
     //TOP画面表示画像のリスト作成→ここはDBから呼べるようにする？
     private val resource = listOf(
-        R.drawable.topimage , R.drawable.floormap
+        R.drawable.sample_image1 , R.drawable.sample_image2,R.drawable.sample_image3, R.drawable.sample_image4
     )
+
+    class Resource{
+        //var imageFile: Int = 0
+        var url: String =""
+    }
+
+    var resource1 = Resource()
+   // resource1.url = "aaa"
+
+
+
+
+
 
     //どの画像を表示しているかを保持する変数
     private var position = 0
@@ -58,6 +71,15 @@ class TopMenuActivity : AppCompatActivity() {
         //初期画像の設定
         imageSwitcher.setImageResource(resource[0])
 
+        //画像タップされた時の動作
+        imageSwitcher.setOnClickListener {
+            //画像の番号を取得→ここからURLを選べる？？
+            Log.d("TAG", position.toString())
+            val url: String = "http://www.yahoo.co.jp/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
 
         timer(period = 5000){
             handler.post {
@@ -70,6 +92,7 @@ class TopMenuActivity : AppCompatActivity() {
 
         //空港案内画面へ遷移
         val toAirportButton = findViewById<ImageButton>(R.id.airport)
+        toAirportButton.setBackgroundColor(Color.GRAY)
         toAirportButton.setOnClickListener{
 
             //startActivity<AirportGuideActivity>()
@@ -77,6 +100,7 @@ class TopMenuActivity : AppCompatActivity() {
 
         //フライト情報画面へ遷移
         val toFlightInfoButton = findViewById<ImageButton>(R.id.flight)
+        toFlightInfoButton.setBackgroundColor(Color.GRAY)
         toFlightInfoButton.setOnClickListener{
 
            //startActivity<AirportGuideActivity>()
@@ -95,22 +119,6 @@ class TopMenuActivity : AppCompatActivity() {
 
            // startActivity<AirportGuideActivity>()
         }
-
-//
-//        //要修正：アフィリエイトリンクエリアの動作
-//        val affiliateButton = findViewById<Button>(R.id.affiliate)
-//        affiliateButton.setOnClickListener {
-//
-//
-//            AlertDialog.Builder(this)
-//                .setTitle("広告")
-//                .setMessage("ここは広告エリアです。タップすると広告ページに遷移します。")
-//                .setPositiveButton("OK"){dialog,which ->}.show()
-//        }
-
-        //val newsImage = findViewById<ImageSwitcher>(R.id.imageSwitcher)
-
-
     }
 
     private fun movePosition(move: Int){
@@ -129,3 +137,5 @@ class TopMenuActivity : AppCompatActivity() {
         imageSwitcher.setImageResource(resource[position])
     }
 }
+
+
