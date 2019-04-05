@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -17,46 +18,53 @@
             android:layout_width="match_parent"
             android:background="@android:color/background_dark" android:id="@+id/imageSwitcher"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_height="200dp">
+            app:layout_constraintEnd_toEndOf="parent" android:layout_height="200dp"
+            android:elevation="5dp">
 
     </ImageSwitcher>
     <ImageButton
             android:layout_width="0dp"
             android:layout_height="0dp" app:srcCompat="@drawable/service"
             android:id="@+id/airport"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/holo_green_dark"
             app:layout_constraintTop_toBottomOf="@+id/imageSwitcher" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/flight" android:layout_marginTop="8dp"
             android:layout_marginStart="8dp" android:layout_marginEnd="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/taxi" android:layout_marginBottom="8dp"/>
+            app:layout_constraintBottom_toTopOf="@+id/taxi" android:layout_marginBottom="8dp"
+            android:scaleType="fitCenter"
+            android:elevation="5dp"/>
     <ImageButton
             android:layout_width="0dp"
             android:layout_height="0dp" app:srcCompat="@drawable/taxi"
             android:id="@+id/taxi"
-            android:background="@android:color/background_light"
+            android:background="@android:color/holo_green_dark"
             app:layout_constraintTop_toBottomOf="@+id/airport" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/sightseeing" android:layout_marginEnd="4dp"
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintBottom_toTopOf="@+id/adView" android:layout_marginBottom="8dp"/>
+            app:layout_constraintBottom_toTopOf="@+id/adView" android:layout_marginBottom="8dp"
+            android:scaleType="fitCenter"
+            android:elevation="5dp"/>
     <ImageButton
             android:layout_width="0dp"
             android:layout_height="0dp" app:srcCompat="@drawable/flight"
             android:id="@+id/flight"
-            android:scaleType="fitXY"
-            android:background="@color/colorPrimaryDark"
+            android:scaleType="fitCenter"
+            android:background="@android:color/holo_green_dark"
             app:layout_constraintTop_toBottomOf="@+id/imageSwitcher" app:layout_constraintStart_toEndOf="@+id/airport"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp" android:layout_marginEnd="8dp"
             android:layout_marginStart="4dp" app:layout_constraintBottom_toTopOf="@+id/sightseeing"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:elevation="5dp"/>
     <ImageButton
             android:layout_width="0dp"
             android:layout_height="0dp" app:srcCompat="@drawable/tourism"
             android:id="@+id/sightseeing"
-            android:background="@android:color/background_light"
-            android:scaleType="fitXY"
+            android:background="@android:color/holo_green_dark"
+            android:scaleType="fitCenter"
             app:layout_constraintTop_toBottomOf="@+id/flight" app:layout_constraintStart_toEndOf="@+id/taxi"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="4dp" android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/adView"/>
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/adView"
+            android:elevation="5dp"/>
     <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="wrap_content"
