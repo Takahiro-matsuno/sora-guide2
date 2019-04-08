@@ -103,6 +103,24 @@ class TaxiReservationActivity2 : AppCompatActivity(), NavigationView.OnNavigatio
     }
 
     /**
+     * ヘッダ右のボタン押下時の処理
+     */
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.activity_menu, menu)
+        return true
+    }
+
+    /**
+     * ヘッダ右のボタン内メニュー押下時の処理
+     */
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when (item.itemId) {
+//            R.id.action_settings -> return true
+//            else -> return super.onOptionsItemSelected(item)
+//        }
+//    }
+
+    /**
      * ドロワーメニュー内の項目選択時の処理
      */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
