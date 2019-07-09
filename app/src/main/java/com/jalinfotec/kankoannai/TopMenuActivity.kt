@@ -40,6 +40,11 @@ class TopMenuActivity : AppCompatActivity() {
             startActivity<KankoMainActivity1>()
         }
 
+        // wikitude
+        findViewById<Button>(R.id.wikitude).setOnClickListener {
+            startActivity<KankoMainActivity1>()
+        }
+
         val affiliateButton = findViewById<Button>(R.id.affiliate)
         affiliateButton.setOnClickListener {
 
