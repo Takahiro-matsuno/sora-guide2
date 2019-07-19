@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.widget.Button
-import com.jalinfotec.kankoannai.wikitude.WikitudeMainActivity
+import com.jalinfotec.kankoannai.wikitude.SampleCamActivity
+//import com.jalinfotec.kankoannai.wikitude.SampleCamActivity
 import org.jetbrains.anko.startActivity
 
 class TopMenuActivity : AppCompatActivity() {
@@ -43,7 +44,7 @@ class TopMenuActivity : AppCompatActivity() {
 
         // wikitude
         findViewById<Button>(R.id.wikitude).setOnClickListener {
-            startActivity<WikitudeMainActivity>()
+            startActivity<SampleCamActivity>()
         }
 
         val affiliateButton = findViewById<Button>(R.id.affiliate)

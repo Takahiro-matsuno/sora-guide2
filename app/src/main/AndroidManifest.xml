@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <!-- Tell the system this app requires OpenGL ES 2.0. -->
     <uses-feature
@@ -23,7 +25,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".wikitude.WikitudeMainActivity">
+        <activity android:name=".wikitude.SampleCamActivity">
         </activity>
         <activity android:name=".KankoMainActivity1">
         </activity>
@@ -41,92 +43,32 @@
         </activity>
         <activity android:name=".AirportGuideActivity"></activity>
         <!-- wikitude -->
-        <activity android:name=".wikitude.WikitudeMainActivity" tools:ignore="DuplicateActivity"></activity>
-        <!-- Image Tracking -->
-        <activity
-                android:name=".wikitude.tracking.image.SimpleImageTrackingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.tracking.image.ExtendedImageTrackingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.tracking.image.MultipleTargetsImageTrackingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <!-- Cloud Recognition -->
-        <activity
-                android:name=".wikitude.tracking.cloud.ContinuousCloudRecognitionActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.tracking.cloud.SingleCloudRecognitionActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <!-- Instant Tracking -->
-        <activity
-                android:name=".wikitude.tracking.instant.InstantTrackingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.tracking.instant.InstantScenePickingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.tracking.instant.SaveInstantTargetActivity"
+        <!-- cam permission activity -->
+        <activity android:name=".wikitude.RuntimePermissionRequestActivity" android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.tracking.instant.LoadInstantTargetActivity"
+        <!-- cam activity -->
+        <!--<activity android:name=".wikitude.SampleCamActivity" android:configChanges="orientation|keyboardHidden|screenSize">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
 
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity android:name=".wikitude.tracking.instant.PlaneDetectionActivity"
-                  android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="fullSensor"/>
-        <!-- Object Tracking -->
-        <activity
-                android:name=".wikitude.tracking.object.ObjectTrackingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.tracking.object.ExtendedObjectTrackingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <!-- Rendering -->
-        <activity
-                android:name=".wikitude.rendering.external.ExternalRenderingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.rendering.internal.InternalRenderingActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <!-- Plugins -->
-        <activity
-                android:name=".wikitude.plugins.BarcodePluginActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.plugins.FaceDetectionPluginActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.plugins.SimpleInputPluginActivity"
 
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <activity
-                android:name=".wikitude.plugins.CustomCameraPluginActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
-        <!-- Camera Control -->
-        <activity
-                android:name=".wikitude.camera.CameraSettingsActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="fullSensor"/>
+        <!-- in case mediaplayer is used -->
+        <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity"
+                  android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
 
         <meta-data android:name="com.google.ar.core" android:value="optional" />
     </application>

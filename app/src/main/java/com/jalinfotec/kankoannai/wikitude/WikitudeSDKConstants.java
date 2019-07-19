@@ -1,0 +1,11 @@
+package com.jalinfotec.kankoannai.wikitude;
+
+public class WikitudeSDKConstants {
+	
+
+	/**
+	 * enter valid license key here to get rid of watermarkin. Note: Ensure to choose a new and unique package name up front (e.g. com.yourcompany.yourappname)
+	 */
+	protected static final String WIKITUDE_SDK_KEY = "m0HnFStTnHAUW3cwdGy+T7H/hQSElBUKVCTS6C+OTHIiP30GJGd/dw+emb4M2EUlMh8OBx5Uil9ii0AhmCb4SM4urefcyDHvyYwejHQ1404oJW5GD4PZTvgqJDOcrThtLtZFqBxuiUXN/caPN/mAtAhmcJN7Z7ygzoUfL8bxBJBTYWx0ZWRfXzhkSL51lqsi+0KyRcjsF9a4nElVEb6pLEeDuDZitS5HuijfiZSWPrsgnyrraSVHp21iqTfzLvXgoCH1jur/v8vDGJvpzR7+AGVp92pWEBLSyTRwc51clqsB6AaNLhiq0qtqAGpoIBAZ0Qhxn0uuvlR11hBGDrlVPTYbwt2p4wYyzkN8iBYBQeozM4cZ9N7ukmhZtiEFzrJGHA/mC82/pTXrhS5li0Hl16brkSoInzzOJp8w3ftD4RvffbGqdPReEN5DUCFn4vnouUObmLjXLAdzZeIyBE2Dxfp/WoGV7IoNkJB8/01eMC25BvUvIpIcB60fS/7NR7av9JX7wF+aoGpnEdL1zw5yxzu2JpUnl5mgVh0QLA854gCWsiBg6S5sdDuQ6M+DZ20Pn2l5EQ0Gzt0+qXNvWyHUIctR5PdITnjQ7xWdr+3ELPtDYXfeGmNCenfFZqCXZf/DD2aHshhKUC8Xl97dlvfBmRrh+jTx3XW2ho23I8thCsbWw+zzBoENz0PEcYLOAvUmrk6OTBndN/OlpiGx7XXshZt54K44fKt7cKkMrV3PcD3fWzTSd8KMRWk4Mi1L7GpFRUVzFvCETBN/82KHGNEXgg==";
+
+}
