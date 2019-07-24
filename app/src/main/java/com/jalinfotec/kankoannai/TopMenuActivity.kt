@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.widget.Button
 import com.jalinfotec.kankoannai.wikitude.SampleCamActivity
+import com.jalinfotec.kankoannai.wikitude.gps.GPSActivity
 //import com.jalinfotec.kankoannai.wikitude.SampleCamActivity
 import org.jetbrains.anko.startActivity
 
@@ -43,8 +44,11 @@ class TopMenuActivity : AppCompatActivity() {
         }
 
         // wikitude
-        findViewById<Button>(R.id.wikitude).setOnClickListener {
+        findViewById<Button>(R.id.wikitude_image).setOnClickListener {
             startActivity<SampleCamActivity>()
+        }
+        findViewById<Button>(R.id.wikitude_gps).setOnClickListener {
+            startActivity<GPSActivity>()
         }
 
         val affiliateButton = findViewById<Button>(R.id.affiliate)
