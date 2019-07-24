@@ -42,7 +42,7 @@
     <string-array name="plugins_samples">
         <item>QR &amp; Barcode</item>
         <item>Face Detection</item>
-        <item>Simple Custom Camera </item>
+        <item>Simple Custom Camera</item>
         <item>Advanced Custom Camera</item>
     </string-array>
 
@@ -69,20 +69,31 @@
     <string name="barcode_hint">Scan the target image and/or any barcode</string>
     <string name="instant_tracking_button_start_tracking">Start Tracking</string>
     <string name="instant_tracking_button_start_initialization">Start Initialization</string>
-    <string name="instant_tracking_assisted_decision_pending">Checking whether platform assisted tracking is available.</string>
-    <string name="instant_tracking_running_non_assisted_support_unknown">It could not be determined if the device supports ARCore. Running without platform assisted tracking(ARCore).</string>
+    <string name="instant_tracking_assisted_decision_pending">Checking whether platform assisted tracking is
+        available.
+    </string>
+    <string name="instant_tracking_running_non_assisted_support_unknown">It could not be determined if the device
+        supports ARCore. Running without platform assisted tracking(ARCore).
+    </string>
     <string name="instant_tracking_running_non_assisted">Running without platform assisted tracking(ARCore).</string>
     <string name="instant_tracking_running_assisted">Running with platform assisted tracking(ARCore).</string>
-    <string name="instant_tracking_running_assisted_description">Move your phone around until the rectangle turns green, which is when you can start tracking.</string>
+    <string name="instant_tracking_running_assisted_description">Move your phone around until the rectangle turns green,
+        which is when you can start tracking.
+    </string>
     <string name="instant_tracking_state_failed_title">Failed to change state</string>
     <string name="instant_tracking_wrong_state_title">Wrong state error</string>
-    <string name="instant_tracking_wrong_state_interaction_message">Scene information is only available during tracking. Please click the start button to start tracking</string>
+    <string name="instant_tracking_wrong_state_interaction_message">Scene information is only available during tracking.
+        Please click the start button to start tracking
+    </string>
     <string name="title_activity_custom_camera">CustomCameraActivity</string>
     <string name="stop_extended_tracking_button_text">Stop Extended Tracking</string>
 
     <!-- Permission handling -->
-    <string name="permissions_denied">The Wikitude SDK needs the following permissions to enable an AR experience:</string>
-    <string name="permission_rationale_text">The Wikitude SDK needs the following permissions to enable an AR experience:</string>
+    <string name="permissions_denied">The Wikitude SDK needs the following permissions to enable an AR experience:
+    </string>
+    <string name="permission_rationale_text">The Wikitude SDK needs the following permissions to enable an AR
+        experience:
+    </string>
     <string name="permission_rationale_title">Wikitude Permissions</string>
 
     <!-- SDK build information -->

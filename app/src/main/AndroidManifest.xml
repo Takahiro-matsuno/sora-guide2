@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.jalinfotec.kankoannai">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.jalinfotec.kankoannai">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_GPS" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
-    <uses-feature android:name="android.hardware.location" android:required="true" />
-    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
-    <uses-feature android:name="android.hardware.sensor.compass" android:required="true" />
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_GPS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true"/>
+    <uses-feature
+            android:name="android.hardware.location"
+            android:required="true"/>
+    <uses-feature
+            android:name="android.hardware.sensor.accelerometer"
+            android:required="true"/>
+    <uses-feature
+            android:name="android.hardware.sensor.compass"
+            android:required="true"/>
+    <uses-feature
+            android:glEsVersion="0x00020000"
+            android:required="true"/>
 
     <application
             android:allowBackup="true"
@@ -23,6 +35,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".wikitude.gps.GPSActivity">
+        </activity>
         <activity android:name=".wikitude.SampleCamActivity">
         </activity>
         <activity android:name=".KankoMainActivity1">
@@ -39,35 +53,37 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AirportGuideActivity"></activity>
-        <!-- wikitude -->
+        <activity android:name=".AirportGuideActivity"/> <!-- wikitude -->
         <!-- cam permission activity -->
-        <activity android:name=".wikitude.RuntimePermissionRequestActivity" android:configChanges="orientation|keyboardHidden|screenSize">
+        <activity
+                android:name=".wikitude.RuntimePermissionRequestActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-
-        <!-- cam activity -->
-        <!--<activity android:name=".wikitude.SampleCamActivity" android:configChanges="orientation|keyboardHidden|screenSize">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.VIEW" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-
-
+        </activity> <!-- cam activity -->
+        <!-- <activity android:name=".wikitude.SampleCamActivity" android:configChanges="orientation|keyboardHidden|screenSize"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <!-- in case mediaplayer is used -->
-        <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity"
-                  android:screenOrientation="landscape">
+        <activity
+                android:name="com.wikitude.tools.activities.MediaPlayerActivity"
+                android:screenOrientation="landscape">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 
-
-        <meta-data android:name="com.google.ar.core" android:value="optional" />
+        <meta-data
+                android:name="com.google.ar.core"
+                android:value="optional"/>
     </application>
+
 </manifest>
