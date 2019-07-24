@@ -3,6 +3,7 @@ package com.jalinfotec.kankoannai.wikitude;
 
 //import com.jalinfotec.kankoannai.R;
 
+import com.jalinfotec.kankoannai.Constants;
 import com.jalinfotec.kankoannai.R;
 
 public class SampleCamActivity extends AbstractArchitectCamActivity {
@@ -34,7 +35,7 @@ public class SampleCamActivity extends AbstractArchitectCamActivity {
 	
 	@Override
 	public String getWikitudeSDKLicenseKey() {
-		return WikitudeSDKConstants.WIKITUDE_SDK_KEY;
+		return Constants.WIKITUDE_SDK_KEY;
 	}
 
 	@Override
