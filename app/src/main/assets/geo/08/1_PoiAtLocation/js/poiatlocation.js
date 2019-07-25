@@ -7,7 +7,6 @@ var World = {
     markerDrawableIdle: null,
 
     /* Called to inject new POI data. */
-    // 起動時にロードされる
     loadPoisFromJsonData: function loadPoisFromJsonDataFn(poiData) {
 
         /*
@@ -15,7 +14,7 @@ var World = {
             reality view. This sample loads an AR.ImageResource when the World variable was defined. It will be
             reused for each marker that we will create afterwards.
         */
-        World.markerDrawableIdle = new AR.ImageResource("assets/marker_idle.png", { // 画像ファイル
+        World.markerDrawableIdle = new AR.ImageResource("assets/marker_idle.png", {
             onError: World.onError
         });
 

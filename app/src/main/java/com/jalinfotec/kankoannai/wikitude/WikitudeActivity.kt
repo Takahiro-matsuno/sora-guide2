@@ -20,8 +20,17 @@ class WikitudeActivity : AppCompatActivity() {
         image.setOnClickListener {
             startActivity<SampleCamActivity>()
         }
-        gps.setOnClickListener {
-            startActivity<GPSActivity>()
+        geo08_1.setOnClickListener {
+            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "1_PoiAtLocation"))
+        }
+        geo08_2.setOnClickListener {
+            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "2_PoiWithLabel"))
+        }
+        geo08_3.setOnClickListener {
+            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "3_MultiplePois"))
+        }
+        geo08_4.setOnClickListener {
+            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "4_SelectingPois"))
         }
     }
 

@@ -16,6 +16,12 @@ import java.io.IOException
 
 class GPSActivity : Activity() {
 
+    companion object {
+        const val geoKey = "GAE"
+    }
+
+    private lateinit var geoName: String
+
     private var aView: ArchitectView? = null
     private var locationProvider: LocationProvider? = null
     private val logTag = this::class.java.simpleName
@@ -24,6 +30,9 @@ class GPSActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ar_campus)
         Log.i(logTag, "onCreate")
+
+        geoName = if (savedInstanceState == null) intent.getStringExtra(geoKey) else savedInstanceState.getString(geoKey)
+
 
         aView = findViewById<ArchitectView>(R.id.archView)
         val config = ArchitectStartupConfiguration()
@@ -65,13 +74,18 @@ class GPSActivity : Activity() {
         })
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putString(geoKey, geoName)
+    }
+
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         Log.i(logTag, "onPostCreate")
 
         aView?.onPostCreate()
         try {
-            aView?.load("geo/index.html")
+            aView?.load("geo/08/$geoName/index.html")
         } catch (e: IOException) {
             e.printStackTrace()
         }

@@ -5,30 +5,67 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".wikitude.WikitudeActivity">
+        tools:context=".wikitude.WikitudeActivity"
+>
 
-    <android.support.v7.widget.GridLayout
+    <TableLayout
+            android:id="@+id/tableLayout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent">
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+    >
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+            <Button
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="画像認識"
+                    android:layout_weight="1"
+            />
 
-        <Button
-                android:id="@+id/image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="画像認識"
-                app:layout_row="1"
-                app:layout_column="1"
-        />
-        <Button
-                android:id="@+id/gps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="GPS"
-                app:layout_row="1"
-                app:layout_column="2"
-        />
-    </android.support.v7.widget.GridLayout>
+        </TableRow>
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+            <Button
+                    android:id="@+id/geo08_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PoiAtLocation"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+            />
+            <Button
+                    android:id="@+id/geo08_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PoiWithLbl"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+            />
+            <Button
+                    android:id="@+id/geo08_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MultiPois"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+            />
+            <Button
+                    android:id="@+id/geo08_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SelectPois"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+            />
+        </TableRow>
+    </TableLayout>
 </android.support.constraint.ConstraintLayout>
