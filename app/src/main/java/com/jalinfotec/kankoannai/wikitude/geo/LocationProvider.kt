@@ -1,18 +1,20 @@
-package com.jalinfotec.kankoannai.wikitude.gps
+package com.jalinfotec.kankoannai.wikitude.geo
 
-import android.Manifest
 import android.content.Context
 import android.location.LocationManager
 import android.content.Context.LOCATION_SERVICE
 import android.content.pm.PackageManager
 import android.location.LocationListener
 import android.support.v4.content.ContextCompat
-
+import android.util.Log
+import com.jalinfotec.kankoannai.Constants
 
 class LocationProvider(
     private val context: Context,
     private val locationListener: LocationListener?
     ) {
+
+    private val logTag = this::class.java.simpleName
 
     /** location listener called on each location update  */
 
@@ -39,6 +41,7 @@ class LocationProvider(
     }
 
     fun onPause() {
+        Log.i(logTag, "onPause")
         if (checkPermission()) {
             if (this.locationListener != null && this.locationManager != null && (this.gpsProviderEnabled || this.networkProviderEnabled)) {
                 this.locationManager.removeUpdates(this.locationListener)
@@ -47,6 +50,7 @@ class LocationProvider(
     }
 
     fun onResume() {
+        Log.i(logTag, "onResume")
         if (checkPermission()) {
             if (this.locationManager != null && this.locationListener != null) {
 
@@ -90,6 +94,13 @@ class LocationProvider(
     }
 
     private fun checkPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(context, Manifest.permission.LOCATION_HARDWARE) == PackageManager.PERMISSION_GRANTED
+        for (p in Constants.permList) {
+            if (ContextCompat.checkSelfPermission(context, p) != PackageManager.PERMISSION_GRANTED) {
+                Log.i(logTag, "checkPermission: false")
+                return false
+            }
+        }
+        Log.i(logTag, "checkPermission: true")
+        return true
     }
 }

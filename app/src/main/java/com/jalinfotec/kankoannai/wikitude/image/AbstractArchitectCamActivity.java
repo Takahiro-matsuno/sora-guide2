@@ -1,4 +1,4 @@
-package com.jalinfotec.kankoannai.wikitude;
+package com.jalinfotec.kankoannai.wikitude.image;
 
 import com.wikitude.architect.ArchitectStartupConfiguration;
 import com.wikitude.architect.ArchitectView;
@@ -14,7 +14,7 @@ import java.io.IOException;
  * Feel free to extend from this activity when setting up your own AR-Activity
  *
  */
-public abstract class AbstractArchitectCamActivity extends Activity implements ArchitectViewHolderInterface{
+public abstract class AbstractArchitectCamActivity extends Activity implements ArchitectViewHolderInterface {
 
     /**
      * holds the Wikitude SDK AR-View, this is where camera, markers, compass, 3D models etc. are rendered

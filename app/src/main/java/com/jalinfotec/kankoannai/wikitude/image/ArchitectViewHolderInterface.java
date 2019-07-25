@@ -1,4 +1,4 @@
-package com.jalinfotec.kankoannai.wikitude;
+package com.jalinfotec.kankoannai.wikitude.image;
 
 public interface ArchitectViewHolderInterface {
 	

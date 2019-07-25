@@ -5,10 +5,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".wikitude.gps.GPSActivity"
+        tools:context=".wikitude.geo.GPSActivity"
 >
     <com.wikitude.architect.ArchitectView
-            android:id="@+id/architectView"
+            android:id="@+id/archView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             tools:ignore="MissingConstraints"

@@ -79,18 +79,11 @@
                   android:layout_height="match_parent"
         >
             <Button
-                    android:id="@+id/wikitude_image"
+                    android:id="@+id/wikitude"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="画像認識"
-            />
-            <Button
-                    android:id="@+id/wikitude_gps"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="gps"
+                    android:text="Wikitude"
             />
         </TableRow>
     </TableLayout>

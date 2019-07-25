@@ -2,14 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.jalinfotec.kankoannai">
-
+    <!-- normal -->
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_GPS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!-- dangerous -->
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-feature
@@ -35,9 +37,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".wikitude.gps.GPSActivity">
+        <activity android:name=".wikitude.WikitudeActivity">
         </activity>
-        <activity android:name=".wikitude.SampleCamActivity">
+        <activity android:name=".wikitude.geo.GPSActivity">
+        </activity>
+        <activity android:name=".wikitude.image.SampleCamActivity">
         </activity>
         <activity android:name=".KankoMainActivity1">
         </activity>
@@ -56,7 +60,7 @@
         <activity android:name=".AirportGuideActivity"/> <!-- wikitude -->
         <!-- cam permission activity -->
         <activity
-                android:name=".wikitude.RuntimePermissionRequestActivity"
+                android:name=".wikitude.image.RuntimePermissionRequestActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

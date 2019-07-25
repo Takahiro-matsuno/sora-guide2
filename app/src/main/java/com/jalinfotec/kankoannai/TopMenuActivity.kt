@@ -1,13 +1,10 @@
 package com.jalinfotec.kankoannai
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.widget.Button
-import com.jalinfotec.kankoannai.wikitude.SampleCamActivity
-import com.jalinfotec.kankoannai.wikitude.gps.GPSActivity
-//import com.jalinfotec.kankoannai.wikitude.SampleCamActivity
+import com.jalinfotec.kankoannai.wikitude.WikitudeActivity
 import org.jetbrains.anko.startActivity
 
 class TopMenuActivity : AppCompatActivity() {
@@ -18,37 +15,34 @@ class TopMenuActivity : AppCompatActivity() {
 
         //空港案内画面へ遷移
         val toAirportButton = findViewById<Button>(R.id.airport)
-        toAirportButton.setOnClickListener{
+        toAirportButton.setOnClickListener {
 
             startActivity<AirportGuideActivity>()
         }
 
         //フライト情報画面へ遷移
         val toFlightInfoButton = findViewById<Button>(R.id.flightinfo)
-        toFlightInfoButton.setOnClickListener{
+        toFlightInfoButton.setOnClickListener {
 
             startActivity<AirportGuideActivity>()
         }
 
         //タクシー予約画面へ遷移
         val toTaxyButton = findViewById<Button>(R.id.taxi)
-        toTaxyButton.setOnClickListener{
+        toTaxyButton.setOnClickListener {
 
             startActivity<AirportGuideActivity>()
         }
 
         //観光案内画面へ遷移
         val toSightseeingButton = findViewById<Button>(R.id.sightseeing)
-        toSightseeingButton.setOnClickListener{
+        toSightseeingButton.setOnClickListener {
             startActivity<KankoMainActivity1>()
         }
 
         // wikitude
-        findViewById<Button>(R.id.wikitude_image).setOnClickListener {
-            startActivity<SampleCamActivity>()
-        }
-        findViewById<Button>(R.id.wikitude_gps).setOnClickListener {
-            startActivity<GPSActivity>()
+        findViewById<Button>(R.id.wikitude).setOnClickListener {
+            startActivity<WikitudeActivity>()
         }
 
         val affiliateButton = findViewById<Button>(R.id.affiliate)
@@ -58,10 +52,7 @@ class TopMenuActivity : AppCompatActivity() {
             AlertDialog.Builder(this)
                 .setTitle("広告")
                 .setMessage("ここは広告エリアです。タップすると広告ページに遷移します。")
-                .setPositiveButton("OK"){dialog,which ->}.show()
+                .setPositiveButton("OK") { dialog, which -> }.show()
         }
-
-
-
     }
 }

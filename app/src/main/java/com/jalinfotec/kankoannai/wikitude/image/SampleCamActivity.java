@@ -1,7 +1,4 @@
-package com.jalinfotec.kankoannai.wikitude;
-
-
-//import com.jalinfotec.kankoannai.R;
+package com.jalinfotec.kankoannai.wikitude.image;
 
 import com.jalinfotec.kankoannai.Constants;
 import com.jalinfotec.kankoannai.R;
@@ -25,12 +22,12 @@ public class SampleCamActivity extends AbstractArchitectCamActivity {
 
 	@Override
 	public int getContentViewId() {
-		return R.layout.sample_cam;
+		return R.layout.ar_campus;
 	}
 
 	@Override
 	public int getArchitectViewId() {
-		return R.id.architectView;
+		return R.id.archView;
 	}
 	
 	@Override
