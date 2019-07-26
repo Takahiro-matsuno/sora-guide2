@@ -67,5 +67,25 @@
                     android:layout_weight="1"
             />
         </TableRow>
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+            <Button
+                    android:id="@+id/geo10_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="リロード"
+                    android:layout_weight="1"
+            />
+            <Button
+                    android:id="@+id/geo10_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="詳細"
+                    android:layout_weight="1"
+            />
+
+        </TableRow>
     </TableLayout>
 </android.support.constraint.ConstraintLayout>

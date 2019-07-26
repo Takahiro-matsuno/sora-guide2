@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import com.jalinfotec.kankoannai.Constants
 import com.jalinfotec.kankoannai.R
-import com.jalinfotec.kankoannai.wikitude.geo.GPSActivity
+import com.jalinfotec.kankoannai.wikitude.geo.GeoActivity
 import com.jalinfotec.kankoannai.wikitude.image.SampleCamActivity
 import kotlinx.android.synthetic.main.activity_wikitude.*
 import org.jetbrains.anko.startActivity
@@ -21,16 +21,22 @@ class WikitudeActivity : AppCompatActivity() {
             startActivity<SampleCamActivity>()
         }
         geo08_1.setOnClickListener {
-            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "1_PoiAtLocation"))
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/1_PoiAtLocation"))
         }
         geo08_2.setOnClickListener {
-            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "2_PoiWithLabel"))
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/2_PoiWithLabel"))
         }
         geo08_3.setOnClickListener {
-            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "3_MultiplePois"))
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/3_MultiplePois"))
         }
         geo08_4.setOnClickListener {
-            startActivity<GPSActivity>(Pair(GPSActivity.geoKey, "4_SelectingPois"))
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/4_SelectingPois"))
+        }
+        geo10_4.setOnClickListener {
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "10/4_ReloadingContent"))
+        }
+        geo10_5.setOnClickListener {
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "10/5_NativeDetailScreen"))
         }
     }
 

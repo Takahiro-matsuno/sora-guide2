@@ -13,11 +13,15 @@ import com.wikitude.architect.ArchitectStartupConfiguration
 import com.wikitude.architect.ArchitectView
 import kotlinx.android.synthetic.main.ar_campus.*
 import java.io.IOException
+import org.json.JSONObject
+import org.jetbrains.anko.startActivity
+import org.json.JSONException
 
-class GPSActivity : Activity() {
+
+class GeoActivity : Activity() {
 
     companion object {
-        const val geoKey = "GAE"
+        const val geoKey = "GEO"
     }
 
     private lateinit var geoName: String
@@ -72,6 +76,18 @@ class GPSActivity : Activity() {
                 Log.i(logTag, "onProviderDisabled")
             }
         })
+
+        archView.addArchitectJavaScriptInterfaceListener {
+            try {
+                startActivity<PoiDetailActivity>(
+                    Pair(PoiDetailActivity.EXTRAS_KEY_POI_ID, it.getString("id")),
+                    Pair(PoiDetailActivity.EXTRAS_KEY_POI_TITILE, it.getString("title")),
+                    Pair(PoiDetailActivity.EXTRAS_KEY_POI_DESCR, it.getString("description"))
+                )
+            } catch (ex: JSONException) {
+                Log.e("onJSONObjectReceived:", "$it", ex)
+            }
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -85,7 +101,7 @@ class GPSActivity : Activity() {
 
         aView?.onPostCreate()
         try {
-            aView?.load("geo/08/$geoName/index.html")
+            aView?.load("geo/$geoName/index.html")
         } catch (e: IOException) {
             e.printStackTrace()
         }
@@ -116,4 +132,6 @@ class GPSActivity : Activity() {
 
         aView?.onDestroy()
     }
+
+
 }
