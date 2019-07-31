@@ -38,6 +38,9 @@ class WikitudeActivity : AppCompatActivity() {
         geo10_5.setOnClickListener {
             startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "10/5_NativeDetailScreen"))
         }
+        geo11_1.setOnClickListener {
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "11/1_POI_Graphic"))
+        }
     }
 
     override fun onResume() {

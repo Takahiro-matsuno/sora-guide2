@@ -87,5 +87,14 @@
             />
 
         </TableRow>
+        <TableRow>
+            <Button
+                    android:id="@+id/geo11_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="特定位置に画像表示"
+                    android:layout_weight="1"
+            />
+        </TableRow>
     </TableLayout>
 </android.support.constraint.ConstraintLayout>
