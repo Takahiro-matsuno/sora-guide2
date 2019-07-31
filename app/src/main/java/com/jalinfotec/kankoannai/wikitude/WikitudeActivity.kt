@@ -20,26 +20,8 @@ class WikitudeActivity : AppCompatActivity() {
         image.setOnClickListener {
             startActivity<SampleCamActivity>()
         }
-        geo08_1.setOnClickListener {
-            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/1_PoiAtLocation"))
-        }
-        geo08_2.setOnClickListener {
-            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/2_PoiWithLabel"))
-        }
-        geo08_3.setOnClickListener {
-            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/3_MultiplePois"))
-        }
-        geo08_4.setOnClickListener {
-            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "08/4_SelectingPois"))
-        }
-        geo10_4.setOnClickListener {
-            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "10/4_ReloadingContent"))
-        }
-        geo10_5.setOnClickListener {
-            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "10/5_NativeDetailScreen"))
-        }
-        geo11_1.setOnClickListener {
-            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "11/1_POI_Graphic"))
+        geo_image.setOnClickListener {
+            startActivity<GeoActivity>(Pair(GeoActivity.geoKey, "graphic"))
         }
     }
 

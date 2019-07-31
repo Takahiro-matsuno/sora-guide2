@@ -30,69 +30,21 @@
             />
 
         </TableRow>
-        <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-        >
+        <TableRow>
             <Button
-                    android:id="@+id/geo08_1"
+                    android:id="@+id/geo_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="PoiAtLocation"
-                    android:textSize="12sp"
+                    android:text="特定位置に画像を表示"
                     android:layout_weight="1"
             />
-            <Button
-                    android:id="@+id/geo08_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="PoiWithLbl"
-                    android:textSize="12sp"
-                    android:layout_weight="1"
-            />
-            <Button
-                    android:id="@+id/geo08_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="MultiPois"
-                    android:textSize="12sp"
-                    android:layout_weight="1"
-            />
-            <Button
-                    android:id="@+id/geo08_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="SelectPois"
-                    android:textSize="12sp"
-                    android:layout_weight="1"
-            />
-        </TableRow>
-        <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-        >
-            <Button
-                    android:id="@+id/geo10_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="リロード"
-                    android:layout_weight="1"
-            />
-            <Button
-                    android:id="@+id/geo10_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="詳細"
-                    android:layout_weight="1"
-            />
-
         </TableRow>
         <TableRow>
             <Button
-                    android:id="@+id/geo11_1"
+                    android:id="@+id/geo_map"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="特定位置に画像表示"
+                    android:text="スポット情報(実装途中)"
                     android:layout_weight="1"
             />
         </TableRow>
