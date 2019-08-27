@@ -17,6 +17,7 @@ import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.activity_top_menu.*
 import kotlinx.android.synthetic.main.activity_top_menu.view.*
 import kotlin.concurrent.timer
+import com.jalinfotec.soraguide.*
 
 class TopMenuActivity : AppCompatActivity() {
 
@@ -75,7 +76,7 @@ class TopMenuActivity : AppCompatActivity() {
         imageSwitcher.setOnClickListener {
             //画像の番号を取得→ここからURLを選べる？？
             Log.d("TAG", position.toString())
-            val url: String = "http://www.yahoo.co.jp/"
+            val url = "http://www.yahoo.co.jp/"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
